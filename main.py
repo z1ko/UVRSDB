@@ -1,6 +1,7 @@
 
 from discord.embeds import Embed
 from discord.ext import commands
+from dotenv import dotenv_values
 
 from univr import BasicInterfaceView, BotUniVR, ExtraInterfaceView, RulesAcceptView
 
@@ -51,9 +52,10 @@ async def regole(ctx):
 
     embed_degrees.set_thumbnail(url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png')
     accept_view = RulesAcceptView()
-    
+
     await ctx.send(view = accept_view, embed = embed_degrees)
     await accept_view.wait()
 
 
-bot.run('OTA3MzEzNjM4NTYwMzgyOTc2.YYlXrA.kfq7btPVrTYBaBzvN73HONcomGY')
+config = dotenv_values('configuration.env')
+bot.run(config['TOKEN'])
