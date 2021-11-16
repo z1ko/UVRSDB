@@ -1,7 +1,10 @@
 
 from discord.embeds import Embed
 from discord.ext import commands
+import discord
+
 from dotenv import dotenv_values
+import json
 
 from univr import BasicInterfaceView, BotUniVR, ExtraInterfaceView, RulesAcceptView
 
@@ -55,6 +58,105 @@ async def regole(ctx):
 
     await ctx.send(view = accept_view, embed = embed_degrees)
     await accept_view.wait()
+
+
+#Configurazione del BOT
+JSON_CONFIG = { }
+
+@bot.command()
+@commands.is_owner()
+async def load_configuration():
+    with open('configuration.json', 'r') as f:
+        print('Caricamento configurazione...')
+        JSON_CONFIG = json.load(f)
+
+
+# Crea nuova categoria
+async def create_custom_category(guild, json_category):
+    category_name = json_category['name']
+
+    try:
+        # Crea nuovo ruolo associato alla categoria
+        print(f'Creazione nuovo ruolo per la categoria "{category_name}"...')
+        role = await guild.create_role(name = category_name)
+        json_category['id_role'] = str(role.id)
+
+    except discord.HTTPException as e:
+        print('Errore creazione nuovo ruolo: ' + e.text)
+        return 0
+
+    overwrites = {
+        # TODO
+    }
+
+    try:
+        # Permetti al solo nuovo ruolo di visualizzare la categoria
+        print(f'Creazione nuova categoria "{category_name}"...')
+        category = await guild.create_category_channel(category_name, overwrites = overwrites)
+        json_category['id_cat'] = str(category.id)
+
+    except discord.HTTPException as e:
+        print('Errore creazione nuova categoria:' + e.text)
+        return 0
+
+    # Crea i canali testuali della categoria
+    for json_channel in json_category['channels']:
+        channel_name = json_channel['name']
+
+        try:
+            print(f'Creazione nuovo canale testuale "{channel_name}" per la categoria {category_name}...')
+            channel = await category.create_text_channel(name = channel_name)
+            json_channel['id_channel'] = str(channel.id)
+
+        except discord.HTTPException as e:
+            print('Errore creazione nuovo canale testuale:' + e.text)
+            return 0
+
+    return 1
+
+
+@bot.command()
+@commands.is_owner()
+async def create_channels(ctx):
+    """
+    Carica file di configurazione json e crea categorie, canali e ruoli
+    TODO: Carica configurazione in un'altra funzione una volta sola
+    """
+
+    # Carica file configurazione
+    with open('configuration.json', 'r') as f:
+        print('Caricamento configurazione...')
+        json_data = json.load(f)
+
+    guild = ctx.guild
+    for json_category in json_data['categories']:
+            
+        category_id   = int(json_category['id_cat'])
+        category_name = json_category['name']
+
+        if category_id == -1:
+            await create_custom_category(guild, json_category)
+        else:
+            try:
+                # Controlla se esiste già, in tal caso skippa
+                print(f'Controllo se la categoria "{category_name}" esiste già...')
+                category = await guild.fetch_channel(int(json_category['id_cat']))
+                print('Categoria già esistente: skippo')
+                continue
+
+            # Crea nuova categoria
+            except discord.NotFound:
+                await create_custom_category(guild, json_category)
+                continue
+                    
+            except discord.HTTPException as e:
+                print('Errore controllo esistenza nuova categoria:' + e.text)
+                continue
+
+    # Salva modifiche al file
+    with open('configuration.json', 'w') as f:
+        print('Salvataggio nuova configurazione...')
+        json.dump(json_data, f, indent = 4)
 
 
 config = dotenv_values('configuration.env')

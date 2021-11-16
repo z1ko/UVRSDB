@@ -1,0 +1,36 @@
+{
+    "categories": [
+        {
+            "name": "OPT - M Science & Engineering",
+            "id_role": "910199595471097866",
+            "id_cat": "910199596452560897",
+            "color": "1f4e1c",
+            "channels": [
+                {
+                    "name": "fond-algo-complessita-problem-solving",
+                    "id_channel": "910199597400473612"
+                },
+                {
+                    "name": "fond-linguaggi-specifica",
+                    "id_channel": "910199599036260433"
+                }
+            ]
+        },
+        {
+            "name": "FOND - M Science & Engineering",
+            "id_role": "910199599787032597",
+            "id_cat": "910199600940478474",
+            "color": "1f4e1c",
+            "channels": [
+                {
+                    "name": "app-dinamiche-web",
+                    "id_channel": "910199601888370798"
+                },
+                {
+                    "name": "codice-malevolo",
+                    "id_channel": "910199602718847026"
+                }
+            ]
+        }
+    ]
+}
