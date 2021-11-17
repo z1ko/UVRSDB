@@ -1,5 +1,6 @@
 
 from discord.embeds import Embed
+from discord.errors import NotFound
 from discord.ext import commands
 import discord
 
@@ -157,6 +158,33 @@ async def create_channels(ctx):
     with open('configuration.json', 'w') as f:
         print('Salvataggio nuova configurazione...')
         json.dump(json_data, f, indent = 4)
+
+
+@bot.command()
+@commands.is_owner()
+async def delete_category(ctx, category_id: int):
+    """
+    Elimina categoria e tutti i canali contenuti
+    """
+
+    try:
+        print(f'Ottenimento categoria con ID {category_id}...')
+        category = await ctx.guild.fetch_channel(category_id)
+        for channel in category.text_channels:
+            try:
+                print(f'Rimozione canale testuale {str(channel)}...')
+                await channel.delete()
+
+            except discord.HTTPException as e:
+                print('Errore rimozione canale testuale: ' + e.text)
+                continue
+            
+    except discord.HTTPException as e:
+        print('Errore rimozione categoria: ' + e.text)
+
+    except discord.NotFound as e:
+        print('Categoria non trovata: ' + e.text)
+
 
 
 config = dotenv_values('configuration.env')
