@@ -178,9 +178,16 @@ async def delete_category(ctx, category_id: int):
             except discord.HTTPException as e:
                 print('Errore rimozione canale testuale: ' + e.text)
                 continue
-            
+        try:
+            print('Rimozione categoria...')
+            await category.delete()
+
+        except discord.HTTPException as e:
+            print('Errore rimozione categoria: ' + e.text)
+
+
     except discord.HTTPException as e:
-        print('Errore rimozione categoria: ' + e.text)
+        print('Errore ottenimento  categoria: ' + e.text)
 
     except discord.NotFound as e:
         print('Categoria non trovata: ' + e.text)
