@@ -2,6 +2,9 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+.vscode/*
+.idea/*
+data/*
 
 # Virtual enviroment
 venv/
