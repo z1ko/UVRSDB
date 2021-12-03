@@ -1,1488 +1,1488 @@
 {
-    "categories": [
-        {
-            "category": {
-                "id_category": 916272243804360704,
-                "name_category": "M OPT Science & Engineering",
-                "year_category": 0,
-                "group_category": "M",
-                "subgroup_category": "Science & Engineering"
+   "categories": [
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M OPT Science & Engineering",
+            "year_category": 0,
+            "group_category": "M",
+            "subgroup_category": "Science & Engineering"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M OPT Science & Engineering",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "fond-algo-complessita-problem-solving",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916080525276487680,
-                "name_role": "M OPT Science & Engineering",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "fond-linguaggi-specifica",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "fond-algo-complessita-problem-solving",
-                    "id_channel": 916272245427556372
-                },
-                {
-                    "name_channel": "fond-linguaggi-specifica",
-                    "id_channel": 916272246442582026
-                },
-                {
-                    "name_channel": "fond-analisi-verifica-software",
-                    "id_channel": 916272247289819216
-                },
-                {
-                    "name_channel": "fond-ing-software",
-                    "id_channel": 916272248225144873
-                },
-                {
-                    "name_channel": "fond-machine-learning",
-                    "id_channel": 916272249105944586
-                },
-                {
-                    "name_channel": "fond-intelligenza-artificiale",
-                    "id_channel": 916272249940639754
-                },
-                {
-                    "name_channel": "fond-sicurezza-privacy",
-                    "id_channel": 916272250926268427
-                },
-                {
-                    "name_channel": "fond-sistemi-informativi",
-                    "id_channel": 916272251383476225
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272252511715349,
-                "name_category": "M FOND Science & Engineering",
-                "year_category": 0,
-                "group_category": "M",
-                "subgroup_category": "Science & Engineering"
+            {
+               "name_channel": "fond-analisi-verifica-software",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916080534885646386,
-                "name_role": "M FOND Science & Engineering",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "fond-ing-software",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "app-dinamiche-web",
-                    "id_channel": 916272254793441330
-                },
-                {
-                    "name_channel": "big-data",
-                    "id_channel": 916272255443558421
-                },
-                {
-                    "name_channel": "codice-malevolo",
-                    "id_channel": 916272256911552522
-                },
-                {
-                    "name_channel": "crittografia",
-                    "id_channel": 916272257578463273
-                },
-                {
-                    "name_channel": "estrazione-integrazione-conoscenza-dati",
-                    "id_channel": 916272258895458304
-                },
-                {
-                    "name_channel": "intelligenza-visuale",
-                    "id_channel": 916272259847585792
-                },
-                {
-                    "name_channel": "logica-informatica",
-                    "id_channel": 916272260678058024
-                },
-                {
-                    "name_channel": "network-security",
-                    "id_channel": 916272261508497428
-                },
-                {
-                    "name_channel": "org-aziendale",
-                    "id_channel": 916272262389321758
-                },
-                {
-                    "name_channel": "ottimizzazione",
-                    "id_channel": 916272263211401236
-                },
-                {
-                    "name_channel": "prog-alte-prestazioni-cpp",
-                    "id_channel": 916272263953788998
-                },
-                {
-                    "name_channel": "prog-grafica",
-                    "id_channel": 916272264826204230
-                },
-                {
-                    "name_channel": "prog-parallela",
-                    "id_channel": 916272265249837077
-                },
-                {
-                    "name_channel": "quantum-computing",
-                    "id_channel": 916272266646532106
-                },
-                {
-                    "name_channel": "ragionamento-automatico",
-                    "id_channel": 916272267279884300
-                },
-                {
-                    "name_channel": "rappr-conoscenza",
-                    "id_channel": 916272268320051220
-                },
-                {
-                    "name_channel": "sistemi-informativi-aziendali",
-                    "id_channel": 916272269234413579
-                },
-                {
-                    "name_channel": "software-security",
-                    "id_channel": 916272270748557333
-                },
-                {
-                    "name_channel": "teoria-dei-giochi",
-                    "id_channel": 916272271742623764
-                },
-                {
-                    "name_channel": "teoria-grafi",
-                    "id_channel": 916272272698908672
-                },
-                {
-                    "name_channel": "verifica-automatica-sistemi",
-                    "id_channel": 916272273256747009
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272274368258048,
-                "name_category": "M1 Robotics & Smart Industry",
-                "year_category": 1,
-                "group_category": "M",
-                "subgroup_category": "Robotics & Smart Industry"
+            {
+               "name_channel": "fond-machine-learning",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916080557203542048,
-                "name_role": "M1 Robotics & Smart Industry",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "fond-intelligenza-artificiale",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "computer-vision",
-                    "id_channel": 916272276079529994
-                },
-                {
-                    "name_channel": "discrete-event-and-hybrid-systems",
-                    "id_channel": 916272276863860746
-                },
-                {
-                    "name_channel": "dynamics-systems",
-                    "id_channel": 916272277623013376
-                },
-                {
-                    "name_channel": "embedded-operating-systems",
-                    "id_channel": 916272278398971914
-                },
-                {
-                    "name_channel": "iot-and-embedded-system-design",
-                    "id_channel": 916272279292358696
-                },
-                {
-                    "name_channel": "robotics",
-                    "id_channel": 916272280139604000
-                },
-                {
-                    "name_channel": "systems-verification-and-testing",
-                    "id_channel": 916272281188188180
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272281918001212,
-                "name_category": "M2 Data Science",
-                "year_category": 2,
-                "group_category": "Magistrali",
-                "subgroup_category": "Data Science"
+            {
+               "name_channel": "fond-sicurezza-privacy",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916083344880566282,
-                "name_role": "M2 Data Science",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "fond-sistemi-informativi",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M FOND Science & Engineering",
+            "year_category": 0,
+            "group_category": "M",
+            "subgroup_category": "Science & Engineering"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M FOND Science & Engineering",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "app-dinamiche-web",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "2-cybercrime",
-                    "id_channel": 916272283591516180
-                },
-                {
-                    "name_channel": "2-comparative-and-transnational-law-technology",
-                    "id_channel": 916272284392632330
-                },
-                {
-                    "name_channel": "2-continuous-optimization-for-data-science",
-                    "id_channel": 916272284887547935
-                },
-                {
-                    "name_channel": "2-data-protection-in-business-organizations",
-                    "id_channel": 916272286322008134
-                },
-                {
-                    "name_channel": "2-digital-transformation-and-it-change",
-                    "id_channel": 916272287739691018
-                },
-                {
-                    "name_channel": "2-ethics-and-law-of-data-protection",
-                    "id_channel": 916272288339464263
-                },
-                {
-                    "name_channel": "2-logistics-operations-supply-chain",
-                    "id_channel": 916272289757134918
-                },
-                {
-                    "name_channel": "2-marketing-research-for-agrifood-and-natural-resources",
-                    "id_channel": 916272290696675338
-                },
-                {
-                    "name_channel": "2-machine-learning-for-data-science",
-                    "id_channel": 916272291057381387
-                },
-                {
-                    "name_channel": "2-network-science-and-econophysics",
-                    "id_channel": 916272292416356402
-                },
-                {
-                    "name_channel": "2-statistical-methods-for-business-intelligence",
-                    "id_channel": 916272293225848832
-                },
-                {
-                    "name_channel": "2-statistical-models-for-data-science",
-                    "id_channel": 916272294102446081
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272294924529704,
-                "name_category": "M1 Data Science",
-                "year_category": 1,
-                "group_category": "M",
-                "subgroup_category": "Data Science"
+            {
+               "name_channel": "big-data",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084607240249344,
-                "name_role": "M1 Data Science",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "codice-malevolo",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "1-business-analytics",
-                    "id_channel": 916272296744849449
-                },
-                {
-                    "name_channel": "1-business-organisation-and-management",
-                    "id_channel": 916272297613082674
-                },
-                {
-                    "name_channel": "1-big-data-epistemology",
-                    "id_channel": 916272298447736882
-                },
-                {
-                    "name_channel": "1-complex-systems-and-social-physics",
-                    "id_channel": 916272299286601759
-                },
-                {
-                    "name_channel": "1-data-security-privacy",
-                    "id_channel": 916272299886383165
-                },
-                {
-                    "name_channel": "1-data-visualisation",
-                    "id_channel": 916272301014646804
-                },
-                {
-                    "name_channel": "1-digital-marketing-and-market-research",
-                    "id_channel": 916272301761257502
-                },
-                {
-                    "name_channel": "1-discrete-optimization-and-decision-making",
-                    "id_channel": 916272302545600532
-                },
-                {
-                    "name_channel": "1-mining-massive-datasets",
-                    "id_channel": 916272303422193684
-                },
-                {
-                    "name_channel": "1-probability-for-data-science",
-                    "id_channel": 916272304361734194
-                },
-                {
-                    "name_channel": "1-programming-and-database",
-                    "id_channel": 916272305192185886
-                },
-                {
-                    "name_channel": "1-social-research",
-                    "id_channel": 916272306261741628
-                },
-                {
-                    "name_channel": "1-statistical-learning",
-                    "id_channel": 916272307197075506
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272308144984064,
-                "name_category": "M2 Mathematics",
-                "year_category": 2,
-                "group_category": "M",
-                "subgroup_category": "Mathematics"
+            {
+               "name_channel": "crittografia",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084623430258738,
-                "name_role": "M2 Mathematics",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "estrazione-integrazione-conoscenza-dati",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "2-advanced-course-in-foundations-of-mathematics",
-                    "id_channel": 916272309961130044
-                },
-                {
-                    "name_channel": "2-axiomatization-of-geometry",
-                    "id_channel": 916272310846111784
-                },
-                {
-                    "name_channel": "2-computational-algebra",
-                    "id_channel": 916272311433302047
-                },
-                {
-                    "name_channel": "2-data-fitting-and-reconstruction",
-                    "id_channel": 916272312687411232
-                },
-                {
-                    "name_channel": "2-foundations-of-data-analysis",
-                    "id_channel": 916272313941499935
-                },
-                {
-                    "name_channel": "2-homological-algebra",
-                    "id_channel": 916272314797158400
-                },
-                {
-                    "name_channel": "2-mathematical-finance",
-                    "id_channel": 916272315589861376
-                },
-                {
-                    "name_channel": "2-mathematical-methods-for-computer-science",
-                    "id_channel": 916272316319682561
-                },
-                {
-                    "name_channel": "2-mathematical-modelling-in-the-applied-sciences",
-                    "id_channel": 916272317649289236
-                },
-                {
-                    "name_channel": "2-mathematics-for-decisions",
-                    "id_channel": 916272318572027934
-                },
-                {
-                    "name_channel": "2-modern-physics",
-                    "id_channel": 916272319264096301
-                },
-                {
-                    "name_channel": "2-numerical-methods-for-mathematical-finance",
-                    "id_channel": 916272320476241940
-                },
-                {
-                    "name_channel": "2-numerical-methods-for-partial-differential-equations",
-                    "id_channel": 916272321407385630
-                },
-                {
-                    "name_channel": "2-numerical-modelling-and-optimization",
-                    "id_channel": 916272321956835339
-                },
-                {
-                    "name_channel": "2-physics-education-laboratory",
-                    "id_channel": 916272323185741834
-                },
-                {
-                    "name_channel": "2-representation-theory",
-                    "id_channel": 916272324033003540
-                },
-                {
-                    "name_channel": "2-statistical-learning",
-                    "id_channel": 916272324884463667
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272325689737246,
-                "name_category": "M1 Mathematics",
-                "year_category": 1,
-                "group_category": "M",
-                "subgroup_category": "Mathematics"
+            {
+               "name_channel": "intelligenza-visuale",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084643814600735,
-                "name_role": "M1 Mathematics",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "logica-informatica",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "1-advanced-geometry",
-                    "id_channel": 916272327287791656
-                },
-                {
-                    "name_channel": "1-algebraic-geometry",
-                    "id_channel": 916272328135032902
-                },
-                {
-                    "name_channel": "1-analytical-mechanics",
-                    "id_channel": 916272328881627137
-                },
-                {
-                    "name_channel": "1-differential-geometry",
-                    "id_channel": 916272330148282369
-                },
-                {
-                    "name_channel": "1-functional-analysis",
-                    "id_channel": 916272331008122890
-                },
-                {
-                    "name_channel": "1-mathematics-teaching-and-workshop",
-                    "id_channel": 916272331926695986
-                },
-                {
-                    "name_channel": "1-mathematical-logic",
-                    "id_channel": 916272332685856769
-                },
-                {
-                    "name_channel": "1-mathematical-methods-for-computer-science",
-                    "id_channel": 916272333939937300
-                },
-                {
-                    "name_channel": "1-optimization",
-                    "id_channel": 916272334774607922
-                },
-                {
-                    "name_channel": "1-partial-differential-equations",
-                    "id_channel": 916272335655424020
-                },
-                {
-                    "name_channel": "1-stochastic-calculus",
-                    "id_channel": 916272336469123092
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272336863391795,
-                "name_category": "M2 Bioinformatics",
-                "year_category": 2,
-                "group_category": "M",
-                "subgroup_category": "Bioinformatics"
+            {
+               "name_channel": "network-security",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084657462841386,
-                "name_role": "M2 Bioinformatics",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "org-aziendale",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "2-biomedical-decision-support-systems",
-                    "id_channel": 916272339245744148
-                },
-                {
-                    "name_channel": "2-biomedical-image-processing",
-                    "id_channel": 916272340256587797
-                },
-                {
-                    "name_channel": "2-computational-analysis-of-genome-scale-sequences",
-                    "id_channel": 916272341334523924
-                },
-                {
-                    "name_channel": "2-healthcare-information-systems",
-                    "id_channel": 916272342206922782
-                },
-                {
-                    "name_channel": "2-multi-omics-single-cell-analysis",
-                    "id_channel": 916272342957707274
-                },
-                {
-                    "name_channel": "2-natural-computing",
-                    "id_channel": 916272343763009546
-                },
-                {
-                    "name_channel": "2-parallel-programming",
-                    "id_channel": 916272344568307722
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272345306517515,
-                "name_category": "M1 Bioinformatics",
-                "year_category": 1,
-                "group_category": "M",
-                "subgroup_category": "Bioinformatics"
+            {
+               "name_channel": "ottimizzazione",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084666883244102,
-                "name_role": "M1 Bioinformatics",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "prog-alte-prestazioni-cpp",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "1-biomedicine-and-bioinformatics-databases",
-                    "id_channel": 916272346996830228
-                },
-                {
-                    "name_channel": "1-fundamental-algorithms-for-bioinformatics",
-                    "id_channel": 916272347927949312
-                },
-                {
-                    "name_channel": "1-programming-for-bioinformatics",
-                    "id_channel": 916272348771000330
-                },
-                {
-                    "name_channel": "1-machine-learning-for-biological-structures-and-networks",
-                    "id_channel": 916272349706346516
-                },
-                {
-                    "name_channel": "1-epidemiological-methods-and-biostatistics",
-                    "id_channel": 916272350813650985
-                },
-                {
-                    "name_channel": "1-human-genomics-and-epigenomics",
-                    "id_channel": 916272351174361109
-                },
-                {
-                    "name_channel": "1-information-processes-and-systems-for-clinical-lab",
-                    "id_channel": 916272352466190346
-                },
-                {
-                    "name_channel": "1-medical-genetics",
-                    "id_channel": 916272353049182249
-                },
-                {
-                    "name_channel": "1-medical-imaging-techniques-principles-and-applications",
-                    "id_channel": 916272353976143893
-                },
-                {
-                    "name_channel": "1-molecular-biology",
-                    "id_channel": 916272355213463552
-                },
-                {
-                    "name_channel": "1-systems-biology",
-                    "id_channel": 916272356333338664
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272357037985793,
-                "name_category": "M2 Agri-Food Biotechnology",
-                "year_category": 2,
-                "group_category": "M",
-                "subgroup_category": "Agri-Food Biotechnology"
+            {
+               "name_channel": "prog-grafica",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084681533964359,
-                "name_role": "M2 Agri-Food Biotechnology",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "prog-parallela",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "2-biochimica-e-fisiologia-dell-interazione-suolo-pianta",
-                    "id_channel": 916272358975746068
-                },
-                {
-                    "name_channel": "2-biotecnologie-fitopatologiche",
-                    "id_channel": 916272359953018920
-                },
-                {
-                    "name_channel": "2-biotecnologie-delle-specie-da-frutto",
-                    "id_channel": 916272360779296778
-                },
-                {
-                    "name_channel": "2-biotecnologie-fitopatologiche",
-                    "id_channel": 916272359953018920
-                },
-                {
-                    "name_channel": "2-biotecnologie-per-la-produzione-agraria-sostenibile",
-                    "id_channel": 916272362289246228
-                },
-                {
-                    "name_channel": "2-fisiologie-della-produttivit\u00c3\u00a0-e-dello-stress",
-                    "id_channel": 916272363157467178
-                },
-                {
-                    "name_channel": "2-processi-di-trasformazione-e-conservazione-degli-alimenti",
-                    "id_channel": 916272364008902676
-                },
-                {
-                    "name_channel": "2-progettazione-e-sviluppo-dei-prodotti-alimentari",
-                    "id_channel": 916272365044891648
-                },
-                {
-                    "name_channel": "2-tecnologie-e-biotecnologie-per-l-innovazione-nei-prodotti-alimentari",
-                    "id_channel": 916272366315778088
-                },
-                {
-                    "name_channel": "2-tecnologie-molecolari-applicate-ai-vegetali",
-                    "id_channel": 916272367284682803
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272368035463178,
-                "name_category": "M1 Agri-Food Biotechnology",
-                "year_category": 1,
-                "group_category": "M",
-                "subgroup_category": "Agri-Food Biotechnology"
+            {
+               "name_channel": "quantum-computing",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084694016196668,
-                "name_role": "M1 Agri-Food Biotechnology",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "ragionamento-automatico",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "1-alimenti-salutistici-e-microbiota-intestinale",
-                    "id_channel": 916272369520214017
-                },
-                {
-                    "name_channel": "1-biologia-cellulare-molecolare-e-applicazioni-biotecnologiche",
-                    "id_channel": 916272370854027274
-                },
-                {
-                    "name_channel": "1-bioinformatica",
-                    "id_channel": 916272371692879882
-                },
-                {
-                    "name_channel": "1-biotecnologie-microbiche-agro-alimentari",
-                    "id_channel": 916272372586266684
-                },
-                {
-                    "name_channel": "1-chimica-degli-alimenti-nutraceutica-e-alimenti-funzionali",
-                    "id_channel": 916272373433532416
-                },
-                {
-                    "name_channel": "1-economia-agroalimentare-e-propriet\u00c3\u00a0-intellettuale",
-                    "id_channel": 916272373957816341
-                },
-                {
-                    "name_channel": "1-genetica-molecolare-e-tecniche-di-miglioramento-genetico",
-                    "id_channel": 916272375115444224
-                },
-                {
-                    "name_channel": "1-genomica",
-                    "id_channel": 916272375908167720
-                },
-                {
-                    "name_channel": "1-metabolismo-secondario-e-ingegneria-metabolica",
-                    "id_channel": 916272376747003924
-                },
-                {
-                    "name_channel": "1-microbiologia-degli-alimenti-e-tracciabilita-dei-microorganismi",
-                    "id_channel": 916272377694912542
-                },
-                {
-                    "name_channel": "1-scienze-omiche",
-                    "id_channel": 916272378688987186
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272379834028052,
-                "name_category": "T3 Bioinformatics",
-                "year_category": 3,
-                "group_category": "T",
-                "subgroup_category": "Bioinformatics"
+            {
+               "name_channel": "rappr-conoscenza",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084707379253258,
-                "name_role": "T3 Bioinformatics",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "sistemi-informativi-aziendali",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "3-basi-di-dati-e-web",
-                    "id_channel": 916272382090559488
-                },
-                {
-                    "name_channel": "3-laboratorio-di-bioinformatica",
-                    "id_channel": 916272383021682688
-                },
-                {
-                    "name_channel": "3-modelli-biologici-discreti",
-                    "id_channel": 916272383986368562
-                },
-                {
-                    "name_channel": "3-recupero-di-dati-ed-elaborazione-di-segnali-e-immagini-per-bioinformatica",
-                    "id_channel": 916272384867184678
-                },
-                {
-                    "name_channel": "3-segnali-e-immagini-ii",
-                    "id_channel": 916272385789931560
-                },
-                {
-                    "name_channel": "3-visualizzazione-scientifica",
-                    "id_channel": 916272386473590805
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272387752861706,
-                "name_category": "T2 Bioinformatics",
-                "year_category": 2,
-                "group_category": "T",
-                "subgroup_category": "Bioinformatics"
+            {
+               "name_channel": "software-security",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084715897896980,
-                "name_role": "T2 Bioinformatics",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "teoria-dei-giochi",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "2-algoritmi",
-                    "id_channel": 916272389355110431
-                },
-                {
-                    "name_channel": "2-analisi-matematica-ii",
-                    "id_channel": 916272390344945684
-                },
-                {
-                    "name_channel": "2-biofisica",
-                    "id_channel": 916272391427080192
-                },
-                {
-                    "name_channel": "2-biologia-molecolare",
-                    "id_channel": 916272392517595166
-                },
-                {
-                    "name_channel": "2-elementi-di-biochimica",
-                    "id_channel": 916272393436164146
-                },
-                {
-                    "name_channel": "2-elementi-di-fisiologia",
-                    "id_channel": 916272394283388928
-                },
-                {
-                    "name_channel": "2-elementi-di-sistemi-operativi-e-reti",
-                    "id_channel": 916272395126448188
-                },
-                {
-                    "name_channel": "2-genetica",
-                    "id_channel": 916272396103725106
-                },
-                {
-                    "name_channel": "2-laboratorio-di-biologia-molecolare",
-                    "id_channel": 916272396904828949
-                },
-                {
-                    "name_channel": "2-metodi-informazionali",
-                    "id_channel": 916272397743718410
-                },
-                {
-                    "name_channel": "2-probabilit\u00c3\u00a0-e-statistica",
-                    "id_channel": 916272398590943232
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272399077482567,
-                "name_category": "T1 Bioinformatics",
-                "year_category": 1,
-                "group_category": "T",
-                "subgroup_category": "Bioinformatics"
+            {
+               "name_channel": "teoria-grafi",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084730812846092,
-                "name_role": "T1 Bioinformatics",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "verifica-automatica-sistemi",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M1 Robotics & Smart Industry",
+            "year_category": 1,
+            "group_category": "M",
+            "subgroup_category": "Robotics & Smart Industry"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M1 Robotics & Smart Industry",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "computer-vision",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "1-algebra-lineare",
-                    "id_channel": 916272401048825887
-                },
-                {
-                    "name_channel": "1-analisi-matematica",
-                    "id_channel": 916272401979936788
-                },
-                {
-                    "name_channel": "1-biologia-generale",
-                    "id_channel": 916272402453921813
-                },
-                {
-                    "name_channel": "1-elementi-di-architettura",
-                    "id_channel": 916272403749928990
-                },
-                {
-                    "name_channel": "1-elementi-di-chimica",
-                    "id_channel": 916272404584595496
-                },
-                {
-                    "name_channel": "1-fisica",
-                    "id_channel": 916272405423472711
-                },
-                {
-                    "name_channel": "1-programmazione",
-                    "id_channel": 916272406279094282
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272407222820884,
-                "name_category": "T3 Biotechnology",
-                "year_category": 3,
-                "group_category": "T",
-                "subgroup_category": "Biotechnology"
+            {
+               "name_channel": "discrete-event-and-hybrid-systems",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084741151784980,
-                "name_role": "T3 Biotechnology",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "dynamics-systems",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "3-basi-di-virologia-molecolare-e-terapia-genica",
-                    "id_channel": 916272408971845632
-                },
-                {
-                    "name_channel": "3-biologia-molecolare-avanzata",
-                    "id_channel": 916272410125299712
-                },
-                {
-                    "name_channel": "3-biologia-differenziamento-e-biodiversit\u00c3\u00a0-dei-vegetalig",
-                    "id_channel": 916272411006087228
-                },
-                {
-                    "name_channel": "3-biotecnologie-per-la-bioeconomia-circolare",
-                    "id_channel": 916272411907870760
-                },
-                {
-                    "name_channel": "3-ecologia-applicata",
-                    "id_channel": 916272413627535390
-                },
-                {
-                    "name_channel": "3-fisiologia-degli-organismi-vegetali",
-                    "id_channel": 916272414374109185
-                },
-                {
-                    "name_channel": "3-fisiologia-umana",
-                    "id_channel": 916272415661768735
-                },
-                {
-                    "name_channel": "3-fondamenti-di-chimica-degli-alimenti",
-                    "id_channel": 916272416542580807
-                },
-                {
-                    "name_channel": "3-introduzione-alla-patologia-e-immunologia",
-                    "id_channel": 916272417477914624
-                },
-                {
-                    "name_channel": "3-metodologie-biomolecolari-e-genetiche",
-                    "id_channel": 916272418400645150
-                },
-                {
-                    "name_channel": "3-microrganismi-per-gli-alimenti-e-la-salute",
-                    "id_channel": 916272418853646357
-                },
-                {
-                    "name_channel": "3-organismi-modello-di-interesse-biotecnologico",
-                    "id_channel": 916272420153880607
-                },
-                {
-                    "name_channel": "3-risorse-genetiche-delle-piante",
-                    "id_channel": 916272421252780042
-                },
-                {
-                    "name_channel": "3-salubrit\u00c3\u00a0-e-sostenibilit\u00c3\u00a0-delle-produzioni-vegetali",
-                    "id_channel": 916272422343294986
-                },
-                {
-                    "name_channel": "3-tecniche-analitiche-di-chimica-clinica",
-                    "id_channel": 916272423345733662
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272424243322920,
-                "name_category": "T2 Biotechnology",
-                "year_category": 2,
-                "group_category": "T",
-                "subgroup_category": "Biotechnology"
+            {
+               "name_channel": "embedded-operating-systems",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084759703191593,
-                "name_role": "T2 Biotechnology",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "iot-and-embedded-system-design",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "2-biochimica-e-biochimica-analitica",
-                    "id_channel": 916272425858117632
-                },
-                {
-                    "name_channel": "2-bioinformatica-e-banche-dati-biologiche",
-                    "id_channel": 916272426688589834
-                },
-                {
-                    "name_channel": "2-biologia-molecolare",
-                    "id_channel": 916272392517595166
-                },
-                {
-                    "name_channel": "2-chimica-fisica",
-                    "id_channel": 916272428416634911
-                },
-                {
-                    "name_channel": "2-fondamenti-di-etica-per-le-biotecnologie",
-                    "id_channel": 916272429641371668
-                },
-                {
-                    "name_channel": "2-genetica",
-                    "id_channel": 916272396103725106
-                },
-                {
-                    "name_channel": "2-microbiologia-generale",
-                    "id_channel": 916272431558164510
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272432355094538,
-                "name_category": "T1 Biotechnology",
-                "year_category": 1,
-                "group_category": "T",
-                "subgroup_category": "Biotechnology"
+            {
+               "name_channel": "robotics",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084773317902336,
-                "name_role": "T1 Biotechnology",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "systems-verification-and-testing",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M2 Data Science",
+            "year_category": 2,
+            "group_category": "Magistrali",
+            "subgroup_category": "Data Science"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M2 Data Science",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "2-cybercrime",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "1-biologia-generale-e-cellulare",
-                    "id_channel": 916272434183798874
-                },
-                {
-                    "name_channel": "1-chimica-generale-ed-inorganica",
-                    "id_channel": 916272435211407361
-                },
-                {
-                    "name_channel": "1-chimica-organica",
-                    "id_channel": 916272436566179850
-                },
-                {
-                    "name_channel": "1-fisica",
-                    "id_channel": 916272405423472711
-                },
-                {
-                    "name_channel": "1-informatica",
-                    "id_channel": 916272438449418260
-                },
-                {
-                    "name_channel": "1-matematica-e-statistica",
-                    "id_channel": 916272439586095164
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272440617873438,
-                "name_category": "T3 Mathematics",
-                "year_category": 3,
-                "group_category": "T",
-                "subgroup_category": "Mathematics"
+            {
+               "name_channel": "2-comparative-and-transnational-law-technology",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084781773647922,
-                "name_role": "T3 Mathematics",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "2-continuous-optimization-for-data-science",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "3-analisi-matematica-3",
-                    "id_channel": 916272442274615327
-                },
-                {
-                    "name_channel": "3-econometria",
-                    "id_channel": 916272443453227028
-                },
-                {
-                    "name_channel": "3-matematica-finanziaria",
-                    "id_channel": 916272444686336000
-                },
-                {
-                    "name_channel": "3-metodi-matematici-e-statistici-in-biologia",
-                    "id_channel": 916272445533593651
-                },
-                {
-                    "name_channel": "3-metodi-numerici-per-le-equazioni-differenziali",
-                    "id_channel": 916272446380851210
-                },
-                {
-                    "name_channel": "3-ricerca-operativa",
-                    "id_channel": 916272447303610378
-                },
-                {
-                    "name_channel": "3-sistemi-stocastici",
-                    "id_channel": 916272448159236116
-                },
-                {
-                    "name_channel": "3-dinamica-dei-fluidi",
-                    "id_channel": 916272449023254589
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272449836965888,
-                "name_category": "T2 Mathematics",
-                "year_category": 2,
-                "group_category": "T",
-                "subgroup_category": "Mathematics"
+            {
+               "name_channel": "2-data-protection-in-business-organizations",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084792959852564,
-                "name_role": "T2 Mathematics",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "2-digital-transformation-and-it-change",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "2-algebra",
-                    "id_channel": 916272451485310976
-                },
-                {
-                    "name_channel": "2-analisi-matematica-2",
-                    "id_channel": 916272452378701865
-                },
-                {
-                    "name_channel": "2-calcolo-numerico-2-con-laboratorio",
-                    "id_channel": 916272453217566750
-                },
-                {
-                    "name_channel": "2-fisica-2",
-                    "id_channel": 916272454077390858
-                },
-                {
-                    "name_channel": "2-geometria",
-                    "id_channel": 916272454954025000
-                },
-                {
-                    "name_channel": "2-macroeconomia",
-                    "id_channel": 916272455788670986
-                },
-                {
-                    "name_channel": "2-microeconomia",
-                    "id_channel": 916272456661090355
-                },
-                {
-                    "name_channel": "2-probabilita-e-statistica",
-                    "id_channel": 916272457797742632
-                },
-                {
-                    "name_channel": "2-probabilit\u00c3\u00a0",
-                    "id_channel": 916272459446116352
-                },
-                {
-                    "name_channel": "2-sistemi-dinamici",
-                    "id_channel": 916272460494700544
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272461425811456,
-                "name_category": "T1 Mathematics",
-                "year_category": 1,
-                "group_category": "T",
-                "subgroup_category": "Mathematics"
+            {
+               "name_channel": "2-ethics-and-law-of-data-protection",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084806310322216,
-                "name_role": "T1 Mathematics",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "2-logistics-operations-supply-chain",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "1-algebra-lineare-con-elementi-di-geometria",
-                    "id_channel": 916272463514570772
-                },
-                {
-                    "name_channel": "1-analisi-matematica-1",
-                    "id_channel": 916272464642850816
-                },
-                {
-                    "name_channel": "1-calcolo-numerico-1-con-laboratorio",
-                    "id_channel": 916272465544642590
-                },
-                {
-                    "name_channel": "1-fisica-1-con-laboratorio",
-                    "id_channel": 916272466341560411
-                },
-                {
-                    "name_channel": "1-fondamenti-della-matematica-1",
-                    "id_channel": 916272467394297916
-                },
-                {
-                    "name_channel": "1-programmazione-con-laboratorio",
-                    "id_channel": 916272468367405066
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272469348843541,
-                "name_category": "T3 Informatica",
-                "year_category": 3,
-                "group_category": "T",
-                "subgroup_category": "Informatica"
+            {
+               "name_channel": "2-marketing-research-for-agrifood-and-natural-resources",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916084815743307808,
-                "name_role": "T3 Informatica",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "2-machine-learning-for-data-science",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "basi-di-dati",
-                    "id_channel": 916272471446007858
-                },
-                {
-                    "name_channel": "controlli-automatici",
-                    "id_channel": 916272472494600222
-                },
-                {
-                    "name_channel": "elaborazione-segnali-e-immagini",
-                    "id_channel": 916272473459273728
-                },
-                {
-                    "name_channel": "elaborazione-di-dati-e-segnali-biomedici",
-                    "id_channel": 916272474428178442
-                },
-                {
-                    "name_channel": "fondamenti",
-                    "id_channel": 916272475564814357
-                },
-                {
-                    "name_channel": "grafica",
-                    "id_channel": 916272476542099516
-                },
-                {
-                    "name_channel": "linguaggi",
-                    "id_channel": 916272477464834109
-                },
-                {
-                    "name_channel": "compialtori",
-                    "id_channel": 916272478567931925
-                },
-                {
-                    "name_channel": "sicurezza-delle-reti",
-                    "id_channel": 916272479415193660
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272480262430740,
-                "name_category": "T2 Informatica",
-                "year_category": 2,
-                "group_category": "T",
-                "subgroup_category": "Informatica"
+            {
+               "name_channel": "2-network-science-and-econophysics",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916092634479611944,
-                "name_role": "T2 Informatica",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "2-statistical-methods-for-business-intelligence",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "algoritmi",
-                    "id_channel": 916272482099527700
-                },
-                {
-                    "name_channel": "programmazione-2",
-                    "id_channel": 916272483177472020
-                },
-                {
-                    "name_channel": "reti",
-                    "id_channel": 916272483735306311
-                },
-                {
-                    "name_channel": "sistemi-operativi",
-                    "id_channel": 916272485077491763
-                },
-                {
-                    "name_channel": "analisi-2",
-                    "id_channel": 916272486012829736
-                },
-                {
-                    "name_channel": "fisica-2",
-                    "id_channel": 916272487002677248
-                },
-                {
-                    "name_channel": "ingegneria-software",
-                    "id_channel": 916272487845732402
-                },
-                {
-                    "name_channel": "sistemi",
-                    "id_channel": 916272488864944158
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272489678655508,
-                "name_category": "T1 Informatica",
-                "year_category": 1,
-                "group_category": "T",
-                "subgroup_category": "Informatica"
+            {
+               "name_channel": "2-statistical-models-for-data-science",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M1 Data Science",
+            "year_category": 1,
+            "group_category": "M",
+            "subgroup_category": "Data Science"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M1 Data Science",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "1-business-analytics",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916092645586137129,
-                "name_role": "T1 Informatica",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "1-business-organisation-and-management",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "analisi-1",
-                    "id_channel": 916272491570290688
-                },
-                {
-                    "name_channel": "architettura",
-                    "id_channel": 916272492237189141
-                },
-                {
-                    "name_channel": "logica",
-                    "id_channel": 916272493583544320
-                },
-                {
-                    "name_channel": "programmazione-1",
-                    "id_channel": 916272494166564905
-                },
-                {
-                    "name_channel": "algebra-lineare",
-                    "id_channel": 916272495466790942
-                },
-                {
-                    "name_channel": "fisica-1",
-                    "id_channel": 916272496582479902
-                },
-                {
-                    "name_channel": "statistica",
-                    "id_channel": 916272497542987786
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272498461511711,
-                "name_category": "T3 Sistemi Medicali",
-                "year_category": 3,
-                "group_category": "T",
-                "subgroup_category": "Sistemi Medicali"
+            {
+               "name_channel": "1-big-data-epistemology",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916092657753792542,
-                "name_role": "T3 Sistemi Medicali",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "1-complex-systems-and-social-physics",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "3-acquisizione-e-analisi-di-immagini-biomediche",
-                    "id_channel": 916272499975667733
-                },
-                {
-                    "name_channel": "3-analisi-e-modellazione-di-sistemi-biologici",
-                    "id_channel": 916272501372366858
-                },
-                {
-                    "name_channel": "3-bio-materiali",
-                    "id_channel": 916272502173466645
-                },
-                {
-                    "name_channel": "3-biofisica-molecolare",
-                    "id_channel": 916272503264018452
-                },
-                {
-                    "name_channel": "3-cardiologia-e-neurologia",
-                    "id_channel": 916272504203538432
-                },
-                {
-                    "name_channel": "3-chirurgia-ortopedica-e-prevenzione",
-                    "id_channel": 916272505239519232
-                },
-                {
-                    "name_channel": "3-chirurgia-robotica-e-neuroradiologia",
-                    "id_channel": 916272506200010783
-                },
-                {
-                    "name_channel": "3-dinamica-dei-fluidi",
-                    "id_channel": 916272449023254589
-                },
-                {
-                    "name_channel": "3-etica-e-psicologia",
-                    "id_channel": 916272508309766144
-                },
-                {
-                    "name_channel": "3-fisiologia-e-statistica-medica",
-                    "id_channel": 916272509245067274
-                },
-                {
-                    "name_channel": "3-ingegneria-del-software",
-                    "id_channel": 916272510113308692
-                },
-                {
-                    "name_channel": "3-intelligenza-artificiale",
-                    "id_channel": 916272511015071764
-                },
-                {
-                    "name_channel": "3-metodi-e-dispositivi-per-la-telemedicina",
-                    "id_channel": 916272512197865482
-                },
-                {
-                    "name_channel": "3-metodi-tecniche-di-misura-e-sensori",
-                    "id_channel": 916272513275813908
-                },
-                {
-                    "name_channel": "3-organizzazione-e-strumenti-di-gestione-dei-sistemi-sanitari",
-                    "id_channel": 916272514395676732
-                },
-                {
-                    "name_channel": "3-principi-di-robotica-e-applicazioni-alla-chirurgia",
-                    "id_channel": 916272515272298526
-                },
-                {
-                    "name_channel": "3-progettazione-e-sviluppo-di-tecnologie-medicali",
-                    "id_channel": 916272516274720818
-                },
-                {
-                    "name_channel": "3-reti-di-sensori-e-dispositivi-indossabili",
-                    "id_channel": 916272517256192030
-                },
-                {
-                    "name_channel": "3-sicurezza-e-privacy",
-                    "id_channel": 916272518430597200
-                },
-                {
-                    "name_channel": "3-sistemi-di-supporto-alla-decisione-medica",
-                    "id_channel": 916272519382712320
-                },
-                {
-                    "name_channel": "3-sistemi-e-controlli-automatici",
-                    "id_channel": 916272520208998400
-                },
-                {
-                    "name_channel": "3-sistemi-operativi",
-                    "id_channel": 916272521148510218
-                },
-                {
-                    "name_channel": "3-sistemi-per-la-gestione-della-salute-e-sicurezza-nei-luoghi-di-lavoro-vita-e-svago",
-                    "id_channel": 916272522188697600
-                },
-                {
-                    "name_channel": "3-strumentazione-biomedicale",
-                    "id_channel": 916272523149205534
-                },
-                {
-                    "name_channel": "3-sviluppo-integrato-di-dispositivi-e-robot-collaborativi-e-per-lindustria-biomedicale",
-                    "id_channel": 916272524009021491
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272524915003422,
-                "name_category": "T2 Sistemi Medicali",
-                "year_category": 2,
-                "group_category": "T",
-                "subgroup_category": "Sistemi Medicali"
+            {
+               "name_channel": "1-data-security-privacy",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916092686207967282,
-                "name_role": "T2 Sistemi Medicali",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "1-data-visualisation",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "2-analisi-2-applicazioni-e-metodi-matematici",
-                    "id_channel": 916272527213477938
-                },
-                {
-                    "name_channel": "2-elementi-di-meccanica-con-laboratorio",
-                    "id_channel": 916272528220123197
-                },
-                {
-                    "name_channel": "2-elettromagnetismo-e-ottica",
-                    "id_channel": 916272529931374623
-                },
-                {
-                    "name_channel": "2-elettronica-analogica-e-digitale-con-laboratorio",
-                    "id_channel": 916272531030310952
-                },
-                {
-                    "name_channel": "2-informatica-medica",
-                    "id_channel": 916272531986591754
-                },
-                {
-                    "name_channel": "2-introduzione-all-analisi-dei-sistemi-e-dei-segnali-con-laboratorio",
-                    "id_channel": 916272532817072128
-                },
-                {
-                    "name_channel": "2-scienza-dei-materiali",
-                    "id_channel": 916272533718827068
-                }
-            ]
-        },
-        {
-            "category": {
-                "id_category": 916272534649978900,
-                "name_category": "T1 Sistemi Medicali",
-                "year_category": 1,
-                "group_category": "T",
-                "subgroup_category": "Sistemi Medicali"
+            {
+               "name_channel": "1-digital-marketing-and-market-research",
+               "id_channel": -1
             },
-            "role": {
-                "id_role": 916092696475619398,
-                "name_role": "T1 Sistemi Medicali",
-                "color_role": "1f4e1c"
+            {
+               "name_channel": "1-discrete-optimization-and-decision-making",
+               "id_channel": -1
             },
-            "channels": [
-                {
-                    "name_channel": "1-algebra-lineare-e-geometria",
-                    "id_channel": 916272536814235659
-                },
-                {
-                    "name_channel": "1-analisi-matematica-1",
-                    "id_channel": 916272464642850816
-                },
-                {
-                    "name_channel": "1-anatomia-e-fisiologia",
-                    "id_channel": 916272538525524039
-                },
-                {
-                    "name_channel": "1-architetture-di-computer-e-introduzione-alle-reti-con-laboratorio",
-                    "id_channel": 916272539511189514
-                },
-                {
-                    "name_channel": "1-chimica-inorganica-e-organica",
-                    "id_channel": 916272540438106122
-                },
-                {
-                    "name_channel": "1-linguaggi-e-strumenti-di-programmazione-con-laboratorio",
-                    "id_channel": 916272541360881704
-                },
-                {
-                    "name_channel": "1-meccanica-e-termodinamica",
-                    "id_channel": 916272542573010945
-                }
-            ]
-        }
-    ]
+            {
+               "name_channel": "1-mining-massive-datasets",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-probability-for-data-science",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-programming-and-database",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-social-research",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-statistical-learning",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M2 Mathematics",
+            "year_category": 2,
+            "group_category": "M",
+            "subgroup_category": "Mathematics"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M2 Mathematics",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "2-advanced-course-in-foundations-of-mathematics",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-axiomatization-of-geometry",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-computational-algebra",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-data-fitting-and-reconstruction",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-foundations-of-data-analysis",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-homological-algebra",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-mathematical-finance",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-mathematical-methods-for-computer-science",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-mathematical-modelling-in-the-applied-sciences",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-mathematics-for-decisions",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-modern-physics",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-numerical-methods-for-mathematical-finance",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-numerical-methods-for-partial-differential-equations",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-numerical-modelling-and-optimization",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-physics-education-laboratory",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-representation-theory",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-statistical-learning",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M1 Mathematics",
+            "year_category": 1,
+            "group_category": "M",
+            "subgroup_category": "Mathematics"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M1 Mathematics",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "1-advanced-geometry",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-algebraic-geometry",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-analytical-mechanics",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-differential-geometry",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-functional-analysis",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-mathematics-teaching-and-workshop",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-mathematical-logic",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-mathematical-methods-for-computer-science",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-optimization",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-partial-differential-equations",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-stochastic-calculus",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M2 Bioinformatics",
+            "year_category": 2,
+            "group_category": "M",
+            "subgroup_category": "Bioinformatics"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M2 Bioinformatics",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "2-biomedical-decision-support-systems",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-biomedical-image-processing",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-computational-analysis-of-genome-scale-sequences",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-healthcare-information-systems",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-multi-omics-single-cell-analysis",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-natural-computing",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-parallel-programming",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M1 Bioinformatics",
+            "year_category": 1,
+            "group_category": "M",
+            "subgroup_category": "Bioinformatics"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M1 Bioinformatics",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "1-biomedicine-and-bioinformatics-databases",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-fundamental-algorithms-for-bioinformatics",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-programming-for-bioinformatics",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-machine-learning-for-biological-structures-and-networks",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-epidemiological-methods-and-biostatistics",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-human-genomics-and-epigenomics",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-information-processes-and-systems-for-clinical-lab",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-medical-genetics",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-medical-imaging-techniques-principles-and-applications",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-molecular-biology",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-systems-biology",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M2 Agri-Food Biotechnology",
+            "year_category": 2,
+            "group_category": "M",
+            "subgroup_category": "Agri-Food Biotechnology"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M2 Agri-Food Biotechnology",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "2-biochimica-e-fisiologia-dell-interazione-suolo-pianta",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-biotecnologie-fitopatologiche",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-biotecnologie-delle-specie-da-frutto",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-biotecnologie-fitopatologiche",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-biotecnologie-per-la-produzione-agraria-sostenibile",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-fisiologie-della-produttività-e-dello-stress",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-processi-di-trasformazione-e-conservazione-degli-alimenti",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-progettazione-e-sviluppo-dei-prodotti-alimentari",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-tecnologie-e-biotecnologie-per-l-innovazione-nei-prodotti-alimentari",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-tecnologie-molecolari-applicate-ai-vegetali",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "M1 Agri-Food Biotechnology",
+            "year_category": 1,
+            "group_category": "M",
+            "subgroup_category": "Agri-Food Biotechnology"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "M1 Agri-Food Biotechnology",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "1-alimenti-salutistici-e-microbiota-intestinale",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-biologia-cellulare-molecolare-e-applicazioni-biotecnologiche",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-bioinformatica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-biotecnologie-microbiche-agro-alimentari",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-chimica-degli-alimenti-nutraceutica-e-alimenti-funzionali",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-economia-agroalimentare-e-proprietà-intellettuale",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-genetica-molecolare-e-tecniche-di-miglioramento-genetico",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-genomica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-metabolismo-secondario-e-ingegneria-metabolica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-microbiologia-degli-alimenti-e-tracciabilita-dei-microorganismi",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-scienze-omiche",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T3 Bioinformatics",
+            "year_category": 3,
+            "group_category": "T",
+            "subgroup_category": "Bioinformatics"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T3 Bioinformatics",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "3-basi-di-dati-e-web",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-laboratorio-di-bioinformatica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-modelli-biologici-discreti",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-recupero-di-dati-ed-elaborazione-di-segnali-e-immagini-per-bioinformatica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-segnali-e-immagini-ii",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-visualizzazione-scientifica",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T2 Bioinformatics",
+            "year_category": 2,
+            "group_category": "T",
+            "subgroup_category": "Bioinformatics"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T2 Bioinformatics",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "2-algoritmi",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-analisi-matematica-ii",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-biofisica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-biologia-molecolare",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-elementi-di-biochimica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-elementi-di-fisiologia",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-elementi-di-sistemi-operativi-e-reti",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-genetica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-laboratorio-di-biologia-molecolare",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-metodi-informazionali",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-probabilità-e-statistica",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T1 Bioinformatics",
+            "year_category": 1,
+            "group_category": "T",
+            "subgroup_category": "Bioinformatics"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T1 Bioinformatics",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "1-algebra-lineare",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-analisi-matematica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-biologia-generale",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-elementi-di-architettura",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-elementi-di-chimica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-fisica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-programmazione",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T3 Biotechnology",
+            "year_category": 3,
+            "group_category": "T",
+            "subgroup_category": "Biotechnology"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T3 Biotechnology",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "3-basi-di-virologia-molecolare-e-terapia-genica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-biologia-molecolare-avanzata",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-biologia-differenziamento-e-biodiversità-dei-vegetalig",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-biotecnologie-per-la-bioeconomia-circolare",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-ecologia-applicata",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-fisiologia-degli-organismi-vegetali",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-fisiologia-umana",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-fondamenti-di-chimica-degli-alimenti",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-introduzione-alla-patologia-e-immunologia",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-metodologie-biomolecolari-e-genetiche",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-microrganismi-per-gli-alimenti-e-la-salute",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-organismi-modello-di-interesse-biotecnologico",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-risorse-genetiche-delle-piante",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-salubrità-e-sostenibilità-delle-produzioni-vegetali",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-tecniche-analitiche-di-chimica-clinica",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T2 Biotechnology",
+            "year_category": 2,
+            "group_category": "T",
+            "subgroup_category": "Biotechnology"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T2 Biotechnology",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "2-biochimica-e-biochimica-analitica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-bioinformatica-e-banche-dati-biologiche",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-biologia-molecolare",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-chimica-fisica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-fondamenti-di-etica-per-le-biotecnologie",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-genetica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-microbiologia-generale",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T1 Biotechnology",
+            "year_category": 1,
+            "group_category": "T",
+            "subgroup_category": "Biotechnology"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T1 Biotechnology",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "1-biologia-generale-e-cellulare",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-chimica-generale-ed-inorganica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-chimica-organica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-fisica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-informatica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-matematica-e-statistica",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T3 Mathematics",
+            "year_category": 3,
+            "group_category": "T",
+            "subgroup_category": "Mathematics"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T3 Mathematics",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "3-analisi-matematica-3",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-econometria",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-matematica-finanziaria",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-metodi-matematici-e-statistici-in-biologia",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-metodi-numerici-per-le-equazioni-differenziali",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-ricerca-operativa",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-sistemi-stocastici",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-dinamica-dei-fluidi",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T2 Mathematics",
+            "year_category": 2,
+            "group_category": "T",
+            "subgroup_category": "Mathematics"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T2 Mathematics",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "2-algebra",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-analisi-matematica-2",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-calcolo-numerico-2-con-laboratorio",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-fisica-2",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-geometria",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-macroeconomia",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-microeconomia",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-probabilita-e-statistica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-probabilità",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-sistemi-dinamici",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T1 Mathematics",
+            "year_category": 1,
+            "group_category": "T",
+            "subgroup_category": "Mathematics"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T1 Mathematics",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "1-algebra-lineare-con-elementi-di-geometria",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-analisi-matematica-1",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-calcolo-numerico-1-con-laboratorio",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-fisica-1-con-laboratorio",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-fondamenti-della-matematica-1",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-programmazione-con-laboratorio",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T3 Informatica",
+            "year_category": 3,
+            "group_category": "T",
+            "subgroup_category": "Informatica"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T3 Informatica",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "basi-di-dati",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "controlli-automatici",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "elaborazione-segnali-e-immagini",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "elaborazione-di-dati-e-segnali-biomedici",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "fondamenti",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "grafica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "linguaggi",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "compialtori",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "sicurezza-delle-reti",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T2 Informatica",
+            "year_category": 2,
+            "group_category": "T",
+            "subgroup_category": "Informatica"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T2 Informatica",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "algoritmi",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "programmazione-2",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "reti",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "sistemi-operativi",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "analisi-2",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "fisica-2",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "ingegneria-software",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "sistemi",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T1 Informatica",
+            "year_category": 1,
+            "group_category": "T",
+            "subgroup_category": "Informatica"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T1 Informatica",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "analisi-1",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "architettura",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "logica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "programmazione-1",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "algebra-lineare",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "fisica-1",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "statistica",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T3 Sistemi Medicali",
+            "year_category": 3,
+            "group_category": "T",
+            "subgroup_category": "Sistemi Medicali"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T3 Sistemi Medicali",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "3-acquisizione-e-analisi-di-immagini-biomediche",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-analisi-e-modellazione-di-sistemi-biologici",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-bio-materiali",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-biofisica-molecolare",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-cardiologia-e-neurologia",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-chirurgia-ortopedica-e-prevenzione",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-chirurgia-robotica-e-neuroradiologia",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-dinamica-dei-fluidi",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-etica-e-psicologia",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-fisiologia-e-statistica-medica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-ingegneria-del-software",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-intelligenza-artificiale",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-metodi-e-dispositivi-per-la-telemedicina",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-metodi-tecniche-di-misura-e-sensori",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-organizzazione-e-strumenti-di-gestione-dei-sistemi-sanitari",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-principi-di-robotica-e-applicazioni-alla-chirurgia",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-progettazione-e-sviluppo-di-tecnologie-medicali",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-reti-di-sensori-e-dispositivi-indossabili",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-sicurezza-e-privacy",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-sistemi-di-supporto-alla-decisione-medica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-sistemi-e-controlli-automatici",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-sistemi-operativi",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-sistemi-per-la-gestione-della-salute-e-sicurezza-nei-luoghi-di-lavoro-vita-e-svago",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-strumentazione-biomedicale",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "3-sviluppo-integrato-di-dispositivi-e-robot-collaborativi-e-per-lindustria-biomedicale",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T2 Sistemi Medicali",
+            "year_category": 2,
+            "group_category": "T",
+            "subgroup_category": "Sistemi Medicali"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T2 Sistemi Medicali",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "2-analisi-2-applicazioni-e-metodi-matematici",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-elementi-di-meccanica-con-laboratorio",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-elettromagnetismo-e-ottica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-elettronica-analogica-e-digitale-con-laboratorio",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-informatica-medica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-introduzione-all-analisi-dei-sistemi-e-dei-segnali-con-laboratorio",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "2-scienza-dei-materiali",
+               "id_channel": -1
+            }
+         ]
+      },
+      {
+         "category": {
+            "id_category": -1,
+            "name_category": "T1 Sistemi Medicali",
+            "year_category": 1,
+            "group_category": "T",
+            "subgroup_category": "Sistemi Medicali"
+         },
+         "role": {
+            "id_role": -1,
+            "name_role": "T1 Sistemi Medicali",
+            "color_role": "1f4e1c"
+         },
+         "channels": [
+            {
+               "name_channel": "1-algebra-lineare-e-geometria",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-analisi-matematica-1",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-anatomia-e-fisiologia",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-architetture-di-computer-e-introduzione-alle-reti-con-laboratorio",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-chimica-inorganica-e-organica",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-linguaggi-e-strumenti-di-programmazione-con-laboratorio",
+               "id_channel": -1
+            },
+            {
+               "name_channel": "1-meccanica-e-termodinamica",
+               "id_channel": -1
+            }
+         ]
+      }
+   ]
 }
