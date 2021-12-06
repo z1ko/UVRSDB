@@ -6,6 +6,7 @@ class RoleTag:
         self.role_id = role_id
         self.emoji = emoji
         self.name = name
+        
 
 # Rappresentano le tag dei vari corsi di studio
 TAGS_DEGREE = [

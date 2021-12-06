@@ -1,120 +1,63 @@
-
+from typing import Union, List, Dict, Optional, Any
+import discord
 from discord.embeds import Embed
 from discord.errors import NotFound
 from discord.ext import commands
-import discord
 
 from dotenv import dotenv_values
 import json
 
-from univr import BasicInterfaceView, BotUniVR, ExtraInterfaceView, RulesAcceptView
+from univr import BotUniVR, MyBot, CHANNEL_TYPE
+from ui import BasicInterfaceView, ExtraInterfaceView, RulesAcceptView
 
-bot = BotUniVR()
+app = MyBot()
+bot = app.bot
+
+
+def main():
+    config = dotenv_values('configuration.env')
+    bot.run(config['TOKEN'])
+
 
 @bot.command()
 @commands.is_owner()
 async def corsi(ctx):
-
     # Embed per il primo menu sui corsi di studio
-    embed_degrees = Embed( 
-        title = 'Menu scelta Corsi di Studio',
-        description = """\
-        Scegliendo il tuo corso di studio dal menu a tendina qui sotto potrai customizzare l'aspetto del server \
-        visualizzando solo i canali inerenti al tuo percorso. \
+    view = BasicInterfaceView()
+    title='Menu scelta Corsi di Studio'
+    description="""
+        Scegliendo il tuo corso di studio dal menu a tendina qui sotto potrai customizzare l'aspetto del server 
+        visualizzando solo i canali inerenti al tuo percorso. 
         """
-    )
-    embed_degrees.set_thumbnail(url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png')
-    await ctx.send(view = BasicInterfaceView(), embed = embed_degrees)
+    url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png'
+    await app.send_embed(ctx, view, title, description, url)
 
 @bot.command()
 @commands.is_owner()
 async def extra(ctx):
-
-    # Embed per le tag extra
-    embed_degrees = Embed( 
-        title = 'Menu scelta attività extra',
-        description = """\
-        Scegliendo le attività extra che vuoi seguire potrai customizzare l'aspetto del server \
+    # Embed per il primo menu sui corsi di studio
+    view = ExtraInterfaceView()
+    title = 'Menu scelta attività extra'
+    description = """
+        Scegliendo le attività extra che vuoi seguire potrai customizzare l'aspetto del server
         """
-    )
-    embed_degrees.set_thumbnail(url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png')
-    await ctx.send(view = ExtraInterfaceView(), embed = embed_degrees)
+    url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png'
+    await app.send_embed(ctx, view, title, description, url)
 
 
 @bot.command()
 @commands.is_owner()
 async def regole(ctx):
+    view = RulesAcceptView()
+    title='Regole del server UniVR Science'
+    description="""
+        Accettando dichiari di aver letto e di accettare le regole del server.
+        Ogni abuso verrà punito.
+    """
+    url='https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png'
 
-    # Embed per le regole
-    embed_degrees = Embed( 
-        title = 'Regole del server UniVR Science',
-        description = """\
-        Accettando dichiari di aver letto e di accettare le regole del server. \
-        Ogni abuso verrà punito. \
-        """
-    )
-
-    embed_degrees.set_thumbnail(url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png')
-    accept_view = RulesAcceptView()
-
-    await ctx.send(view = accept_view, embed = embed_degrees)
-    await accept_view.wait()
-
-
-#Configurazione del BOT
-JSON_CONFIG = { }
-
-@bot.command()
-@commands.is_owner()
-async def load_configuration():
-    with open('configuration.json', 'r') as f:
-        print('Caricamento configurazione...')
-        JSON_CONFIG = json.load(f)
-
-
-# Crea nuova categoria
-async def create_custom_category(guild, json_category):
-    category_name = json_category['name']
-
-    try:
-        # Crea nuovo ruolo associato alla categoria
-        print(f'Creazione nuovo ruolo per la categoria "{category_name}"...')
-        role = await guild.create_role(name = category_name)
-        json_category['id_role'] = str(role.id)
-
-    except discord.HTTPException as e:
-        print('Errore creazione nuovo ruolo: ' + e.text)
-        return 0
-
-    overwrites = {
-        # TODO
-    }
-
-    try:
-        # Permetti al solo nuovo ruolo di visualizzare la categoria
-        print(f'Creazione nuova categoria "{category_name}"...')
-        category = await guild.create_category_channel(category_name, overwrites = overwrites)
-        json_category['id_cat'] = str(category.id)
-
-    except discord.HTTPException as e:
-        print('Errore creazione nuova categoria:' + e.text)
-        return 0
-
-    # Crea i canali testuali della categoria
-    for json_channel in json_category['channels']:
-        channel_name = json_channel['name']
-
-        try:
-            print(f'Creazione nuovo canale testuale "{channel_name}" per la categoria {category_name}...')
-            channel = await category.create_text_channel(name = channel_name)
-            json_channel['id_channel'] = str(channel.id)
-
-        except discord.HTTPException as e:
-            print('Errore creazione nuovo canale testuale:' + e.text)
-            return 0
-
-    return 1
-
+    await app.send_embed(ctx, view, title, description, url)
+    await view.wait()
 
 @bot.command()
 @commands.is_owner()
@@ -123,76 +66,94 @@ async def create_channels(ctx):
     Carica file di configurazione json e crea categorie, canali e ruoli
     TODO: Carica configurazione in un'altra funzione una volta sola
     """
-
-    # Carica file configurazione
-    with open('configuration.json', 'r') as f:
-        print('Caricamento configurazione...')
-        json_data = json.load(f)
-
-    guild = ctx.guild
+    cat_loaded = 0
+    json_data = app.load_configuration()
     for json_category in json_data['categories']:
-            
-        category_id   = int(json_category['id_cat'])
-        category_name = json_category['name']
 
-        if category_id == -1:
-            await create_custom_category(guild, json_category)
-        else:
-            try:
-                # Controlla se esiste già, in tal caso skippa
-                print(f'Controllo se la categoria "{category_name}" esiste già...')
-                category = await guild.fetch_channel(int(json_category['id_cat']))
-                print('Categoria già esistente: skippo')
-                continue
+        role_data = json_category['role']
+        role_id = int(role_data['id_role'])
+        role_name = role_data['name_role']
+        role_color = role_data['color_role']
 
-            # Crea nuova categoria
-            except discord.NotFound:
-                await create_custom_category(guild, json_category)
-                continue
-                    
-            except discord.HTTPException as e:
-                print('Errore controllo esistenza nuova categoria:' + e.text)
-                continue
+        category_data = json_category['category']
+        category_id = int(category_data['id_category'])
+        category_name = category_data['name_category']
 
-    # Salva modifiche al file
-    with open('configuration.json', 'w') as f:
-        print('Salvataggio nuova configurazione...')
-        json.dump(json_data, f, indent = 4)
+        channels_list = json_category['channels']
+
+        ## Role
+        role = None
+        if role_id != -1: # by id
+            role = await app.fetch_role(ctx,role_id)
+        else:             # by name
+            role = await app.find_role(ctx,role_name)
+        if role is None:  # create
+            role = await app.create_role(ctx, role_name, role_color=role_color)
+        role_data['id_role'] = role.id
+
+        ## Category
+        category = None
+        if category_id != -1:  # by id
+            category = await app.fetch_channel(ctx, category_id)
+        else:  # by name
+            category = await app.find_channel(ctx, category_name, kind='GUILD_CATEGORY')
+        if category is None:  # create
+            category = await app.create_category(ctx, category_name)
+        category_data['id_category'] = category.id
+
+        ## Permissions ( category <-> role )
+        if not await app.private_channel(ctx, category, role):
+            return False
+
+
+        ## Channel(s)
+        for channel_data in channels_list:
+            channel_id = channel_data["id_channel"]
+            channel_name = channel_data["name_channel"]
+
+            channel = None
+            if channel_id != -1:  # by id
+                channel = await app.fetch_channel(ctx, channel_id)
+            else:  # by name
+                channel = await app.find_channel(ctx, channel_name, kind='GUILD_TEXT')
+            if channel is None:  # create
+                channel = await app.create_channel(ctx, channel_name, category=category)
+            else:
+                await channel.edit(category=category)
+
+            channel_data["id_channel"] = channel.id
+
+        cat_loaded += 1
+
+    app.save_configuration(json_data)
 
 
 @bot.command()
 @commands.is_owner()
-async def delete_category(ctx, category_id: int):
+async def get_categories(ctx, *except_ids):
     """
     Elimina categoria e tutti i canali contenuti
     """
+    ids = []
+    for channel in ctx.guild.channels:
+        if channel.type.name == "category": # or .value == 4
+            id_str = str(channel.id)
+            if id_str in except_ids: continue
+            ids.append(id_str)
 
-    try:
-        print(f'Ottenimento categoria con ID {category_id}...')
-        category = await ctx.guild.fetch_channel(category_id)
-        for channel in category.text_channels:
-            try:
-                print(f'Rimozione canale testuale {str(channel)}...')
-                await channel.delete()
-
-            except discord.HTTPException as e:
-                print('Errore rimozione canale testuale: ' + e.text)
-                continue
-        try:
-            print('Rimozione categoria...')
-            await category.delete()
-
-        except discord.HTTPException as e:
-            print('Errore rimozione categoria: ' + e.text)
+    await app.send(ctx, " ".join(ids))
 
 
-    except discord.HTTPException as e:
-        print('Errore ottenimento  categoria: ' + e.text)
-
-    except discord.NotFound as e:
-        print('Categoria non trovata: ' + e.text)
+@bot.command()
+@commands.is_owner()
+async def delete_category(ctx, *category_ids):
+    """
+    Elimina categoria e tutti i canali contenuti
+    """
+    for category_id in category_ids:
+        await app.delete_category(ctx, category_id)
 
 
 
-config = dotenv_values('configuration.env')
-bot.run(config['TOKEN'])
+if __name__ == '__main__':
+    main()
