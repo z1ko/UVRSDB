@@ -5,10 +5,9 @@ from discord.errors import NotFound
 from discord.ext import commands
 
 from dotenv import dotenv_values
-import json
 
-from univr import BotUniVR, MyBot, CHANNEL_TYPE
-from ui import BasicInterfaceView, ExtraInterfaceView, RulesAcceptView
+from univr import BotUniVR, MyBot
+from ui import Select,  Button, BasicInterfaceView, ExtraInterfaceView, RulesAcceptView
 
 app = MyBot()
 bot = app.bot
@@ -18,6 +17,40 @@ def main():
     config = dotenv_values('configuration.env')
     bot.run(config['TOKEN'])
 
+async def toggle_tag(ctx, itm, event):
+    await app.send_embed(ctx, "ok!" )
+
+
+@bot.command()
+@commands.is_owner()
+async def test(ctx):
+    options_tags_t = app.get_role_options( app.get_role_tags( app.get_categories(magistrali=False) ) )
+    options_tags_m = app.get_role_options( app.get_role_tags( app.get_categories(triennali=False) ) )
+
+    dropdown_select_t = Select(custom_id="asd_lol1", placeholder="Seleziona TRIENNALI", max_values=len(options_tags_t))
+    dropdown_select_m = Select(custom_id="asd_lol2", placeholder="Seleziona MAGISTRALI", max_values=len(options_tags_m))
+
+    dropdown_select_t.add_callback(
+        lambda itm,event: print(itm,event)
+    )
+
+    for option in options_tags_t:
+        dropdown_select_t.append_option(option)
+
+    for option in options_tags_m:
+        dropdown_select_m.append_option(option)
+
+    view = discord.ui.View()
+    view.add_item(dropdown_select_t)
+    view.add_item(dropdown_select_m)
+
+    title='Menu scelta Corsi di Studio'
+    description="""
+        Scegliendo il tuo corso di studio dal menu a tendina qui sotto potrai customizzare l'aspetto del server 
+        visualizzando solo i canali inerenti al tuo percorso. 
+        """
+    url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png'
+    await app.send_embed(ctx, view, title, description, url)
 
 @bot.command()
 @commands.is_owner()

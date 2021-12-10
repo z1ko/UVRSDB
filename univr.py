@@ -9,8 +9,7 @@ from discord.ext import commands, tasks
 from discord.errors import NotFound
 from discord.ext import commands
 
-from ui import TagDropdown, TagView, ButtonAcceptView, BasicInterfaceView, ExtraInterfaceView, RulesAcceptView
-from tags import TAGS_DEGREE, TAGS_SPECIAL, TAGS_YEAR
+from ui import BasicInterfaceView, ExtraInterfaceView
 
 # Possibili stati divertenti del bot
 STATUSES = cycle([
@@ -141,6 +140,45 @@ class MyBot:
         with open('configuration.json', 'w') as f:
             print('Salvataggio nuova configurazione...')
             json.dump(json_data, f, indent=4)
+
+
+    def get_categories(self, triennali = True, magistrali = True):
+        self.load_configuration()
+        categories = self.config['categories']
+        if triennali and magistrali: return categories
+        if triennali:
+            return list(filter(lambda cat: cat['category']['group_category'] == 'T', categories))
+        if magistrali:
+            return list(filter(lambda cat: cat['category']['group_category'] == 'M', categories))
+
+
+    def get_role_tags(self, categories=None):
+        if categories is None:
+            self.load_configuration()
+            categories = self.config['categories']
+        role_tags = []
+
+        for category in categories:
+            role_data = category['role']
+            id_role = role_data['id_role']
+            name_role = role_data['name_role']
+            if id_role == -1: continue
+
+            role_tag = {
+                "id_role": id_role,
+                "tag_name": name_role,
+            }
+            role_tags.append(role_tag)
+        return role_tags
+
+    def get_role_options(self, tags = None):
+        if tags is None: tags = self.get_role_tags()
+        options = []
+        for tag in tags:
+            option = discord.SelectOption( value=tag['id_role'], label=tag['tag_name'] )
+            options.append( option )
+        return options
+
 
     async def send_embed(self, ctx, view, title, description, url):
         embed_degrees = Embed(title=title, description=description)
@@ -298,3 +336,6 @@ class MyBot:
 
         except discord.NotFound as e:
             print('Categoria non trovata: ' + e.text)
+
+
+
