@@ -108,13 +108,25 @@ categories:
       - name_channel: systems-verification-and-testing
         id_channel: -1
 
-
+  - category:
+      id_category: -1
+      name_category: M2 Robotics & Smart Industry
+      year_category: 2
+      group_category: M
+      subgroup_category: Robotics & Smart Industry
+    role:
+      id_role: -1
+      name_role: M2 Robotics & Smart Industry
+      color_role: 1f4e1c
+    channels:
+      - name_channel: todo-channel
+        id_channel: -1
 
   - category:
       id_category: -1
       name_category: M2 Data Science
       year_category: 2
-      group_category: Magistrali
+      group_category: M
       subgroup_category: Data Science
     role:
       id_role: -1

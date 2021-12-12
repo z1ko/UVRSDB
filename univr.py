@@ -152,37 +152,24 @@ class MyBot:
             return list(filter(lambda cat: cat['category']['group_category'] == 'M', categories))
 
 
-    def get_role_tags(self, categories=None):
+    def get_role_options(self, categories=None):
         if categories is None:
             self.load_configuration()
             categories = self.config['categories']
-        role_tags = []
 
+        options = []
         for category in categories:
             role_data = category['role']
-            id_role = role_data['id_role']
-            name_role = role_data['name_role']
-            if id_role == -1: continue
-
-            role_tag = {
-                "id_role": id_role,
-                "tag_name": name_role,
-            }
-            role_tags.append(role_tag)
-        return role_tags
-
-    def get_role_options(self, tags = None):
-        if tags is None: tags = self.get_role_tags()
-        options = []
-        for tag in tags:
-            option = discord.SelectOption( value=tag['id_role'], label=tag['tag_name'] )
-            options.append( option )
+            if role_data['id_role'] == -1: continue
+            option = discord.SelectOption( value=role_data['id_role'], label=role_data['name_role'] )
+            options.append(option)
         return options
 
 
-    async def send_embed(self, ctx, view, title, description, url):
+    async def send_embed(self, ctx, view, title, description, url=None):
         embed_degrees = Embed(title=title, description=description)
-        embed_degrees.set_thumbnail(url=url)
+        if url is not None:
+            embed_degrees.set_thumbnail(url=url)
         await ctx.send(view=view, embed=embed_degrees)
 
     async def send(self, ctx, msg):

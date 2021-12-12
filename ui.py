@@ -16,13 +16,13 @@ class Select(discord.ui.Select):
         super().__init__(**kargv)
         self.event_callback = []
 
-    def add_callback(self, cb_function):
-        self.event_callback.append(cb_function)
+    def add_callback(self, ctx, cb_function):
+        self.event_callback.append([ctx, cb_function])
 
     # Aggiorna tag dell'utente che ha usato il dropdown
-    async def callback(self, interaction):
-        for cb in self.event_callback:
-            cb(self, interaction)
+    async def callback(self, event):
+        for ctx, cb_function in self.event_callback:
+            await cb_function(ctx, self, event)
 
 class Button(discord.ui.View):
     def __init__(self, **kargv):
