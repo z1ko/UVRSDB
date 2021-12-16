@@ -1,3 +1,4 @@
+#from univr import BotUniVR
 
 # Rappresenta un'associazione Ruolo - Nome, utilizzata per personalizzare
 # la struttura del server
@@ -8,7 +9,9 @@ class RoleTag:
         self.name = name
         
 
-# Rappresentano le tag dei vari corsi di studio
+
+
+
 TAGS_DEGREE = [
 
     # Corsi base

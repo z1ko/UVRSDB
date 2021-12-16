@@ -9,8 +9,7 @@ from discord.ext import commands, tasks
 from discord.errors import NotFound
 from discord.ext import commands
 
-from ui import TagDropdown, TagView, ButtonAcceptView, BasicInterfaceView, ExtraInterfaceView, RulesAcceptView
-from tags import TAGS_DEGREE, TAGS_SPECIAL, TAGS_YEAR
+from ui import BasicInterfaceView, ExtraInterfaceView
 
 # Possibili stati divertenti del bot
 STATUSES = cycle([
@@ -142,9 +141,35 @@ class MyBot:
             print('Salvataggio nuova configurazione...')
             json.dump(json_data, f, indent=4)
 
-    async def send_embed(self, ctx, view, title, description, url):
+
+    def get_categories(self, triennali = True, magistrali = True):
+        self.load_configuration()
+        categories = self.config['categories']
+        if triennali and magistrali: return categories
+        if triennali:
+            return list(filter(lambda cat: cat['category']['group_category'] == 'T', categories))
+        if magistrali:
+            return list(filter(lambda cat: cat['category']['group_category'] == 'M', categories))
+
+
+    def get_role_options(self, categories=None):
+        if categories is None:
+            self.load_configuration()
+            categories = self.config['categories']
+
+        options = []
+        for category in categories:
+            role_data = category['role']
+            if role_data['id_role'] == -1: continue
+            option = discord.SelectOption( value=role_data['id_role'], label=role_data['name_role'] )
+            options.append(option)
+        return options
+
+
+    async def send_embed(self, ctx, view, title, description, url=None):
         embed_degrees = Embed(title=title, description=description)
-        embed_degrees.set_thumbnail(url=url)
+        if url is not None:
+            embed_degrees.set_thumbnail(url=url)
         await ctx.send(view=view, embed=embed_degrees)
 
     async def send(self, ctx, msg):
@@ -298,3 +323,6 @@ class MyBot:
 
         except discord.NotFound as e:
             print('Categoria non trovata: ' + e.text)
+
+
+

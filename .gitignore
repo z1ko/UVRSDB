@@ -8,3 +8,4 @@ data/*
 
 # Virtual enviroment
 venv/
+configuration.env

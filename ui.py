@@ -10,7 +10,32 @@ import discord
 
 from tags import TAGS_DEGREE, TAGS_SPECIAL, TAGS_YEAR
 
-# Rappresenta un insieme di tag selezionabili
+
+class Select(discord.ui.Select):
+    def __init__(self, **kargv):
+        super().__init__(**kargv)
+        self.event_callback = []
+
+    def add_callback(self, ctx, cb_function):
+        self.event_callback.append([ctx, cb_function])
+
+    # Aggiorna tag dell'utente che ha usato il dropdown
+    async def callback(self, event):
+        for ctx, cb_function in self.event_callback:
+            await cb_function(ctx, self, event)
+
+class Button(discord.ui.View):
+    def __init__(self, **kargv):
+        super().__init__(**kargv)
+        self.button_callback = []
+
+
+    async def add_button(self, cb_function, **kargv):
+        btn = discord.ui.button(**kargv).decorator(cb_function)
+        self.button_callback.append(btn)
+        self.stop()
+
+    # Rappresenta un insieme di tag selezionabili
 class TagDropdown(discord.ui.Select):
     def __init__(self, custom_id, placeholder, tags, max_values):
         self.id = custom_id
@@ -55,9 +80,9 @@ class TagDropdown(discord.ui.Select):
 
 
     # Messaggio customizzato inviato all'utente
-    # quando questo cambia tag 
+    # quando questo cambia tag
     def response(self, user: discord.User, tag) -> str:
-        raise NotImplementedError 
+        raise NotImplementedError
 
 # ================================================================================================
 
