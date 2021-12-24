@@ -31,9 +31,11 @@ class Button(discord.ui.View):
 
 
     async def add_button(self, cb_function, **kargv):
-        btn = discord.ui.button(**kargv).decorator(cb_function)
+        btn = discord.ui.button(**kargv)(cb_function)
         self.button_callback.append(btn)
         self.stop()
+
+# ================================================================================================
 
     # Rappresenta un insieme di tag selezionabili
 class TagDropdown(discord.ui.Select):
