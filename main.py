@@ -21,22 +21,39 @@ def main():
     bot.run(config['TOKEN'])
 
 
-async def toggle_tag(ctx: discord.ext.commands.Context, itm: Select, interaction: discord.interactions.Interaction ):
-    print(itm, interaction)
-    user = interaction.user
-    for role_id in interaction.data['values']:
-        target_role = interaction.guild.get_role(int(role_id))
-        if target_role.id in [role.id for role in user.roles]:
-            await user.remove_roles(target_role)
-        else:
-            await user.add_roles(target_role)
-
-    await app.send(ctx, "ok!")
 
 
 @bot.command()
-@commands.is_owner()
-async def test(ctx):
+@commands.has_permissions(administrator=True)
+async def test0(ctx):
+    cats = app.get_categories(triennali=True, magistrali=True)
+    view = discord.ui.View()
+    """ add_button
+    label: Optional[str] = None,
+    custom_id: Optional[str] = None,
+    disabled: bool = False,
+    style: ButtonStyle = ButtonStyle.secondary,
+    emoji: Optional[Union[str, Emoji, PartialEmoji]] = None,
+    row: Optional[int] = None,
+    """
+
+    for cat in cats:
+        cat_data = cat["category"]
+        btn_view = Button()
+        await btn_view.add_button(toggle_tag, label=cat_data["name_category"], custom_id=cat_data["id_category"])
+        view.add_item(btn_view)
+    title = "Selezione corsi"
+    description = """
+        Scegliendo il tuo corso di studio dal menu a tendina qui sotto potrai customizzare l'aspetto del server 
+        visualizzando solo i canali inerenti al tuo percorso. 
+    """
+    url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png'
+    await app.send_embed(ctx, view, title, description, url)
+
+
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def test1(ctx):
     catss = {
         "Triennali": app.get_categories(triennali=True, magistrali=False),
         "Magistrali": app.get_categories(triennali=False, magistrali=True)
@@ -70,7 +87,7 @@ async def test(ctx):
             print(f"dropdown:{name}_{subgroup}")
 
             dropdown_select = Select(custom_id=f"select:{subgroup}_{name}", placeholder=subgroup,
-                                     max_values=len(options_tags))
+                                     max_values=len(options_tags), min_values = 1)
             dropdown_select.add_callback(ctx, toggle_tag)
 
             for option in options_tags:
@@ -93,20 +110,54 @@ async def test(ctx):
             await app.send_embed(ctx, view=view, title=title, description=", ".join(sub_stack))
             view = discord.ui.View()
 
+async def toggle_tag(ctx: discord.ext.commands.Context, itm: Select, interaction: discord.interactions.Interaction):
+
+    # print(itm, interaction)
+    user = interaction.user
+    role_ids_selected = [int(role_id) for role_id in interaction.data['values']]
+    role_ids_user = [role.id for role in user.roles]
+    role_ids_all = [option.value for option in itm.options]
+    role_ids_on = list(filter(lambda role_id: role_id in role_ids_selected and role_id not in role_ids_user, role_ids_all))
+    role_ids_off = list(filter(lambda role_id: role_id not in role_ids_on and role_id in role_ids_all, role_ids_user))
+    # print("role_ids_selected",role_ids_selected)
+    # print("role_ids_user",role_ids_user)
+    # print("role_ids_all",role_ids_all)
+    # print("role_ids_on",role_ids_on)
+    # print("role_ids_off",role_ids_off)
+
+    roles_on = list(filter(lambda role: role.id in role_ids_on, interaction.guild.roles))
+    roles_off = list(filter(lambda role: role.id in role_ids_off, interaction.guild.roles))
+
+    for role_on in roles_on:
+        await user.add_roles(role_on)
+
+    for role_off in roles_off:
+        await user.remove_roles(role_off)
+
+
+    #await app.send(ctx, "ok!")
+
 
 @bot.command()
-@commands.is_owner()
-async def test2(ctx):
+@commands.has_permissions(administrator=True)
+async def corsi(ctx):
     cat_triennali = app.get_categories(triennali=True, magistrali=False)
     cat_magistrali = app.get_categories(triennali=False, magistrali=True)
 
-    options_tags_t = app.get_role_options(cat_triennali)
-    options_tags_m = app.get_role_options(cat_magistrali)
+    # emoji_t = [cat['role']['emoji_role'] for cat in cat_triennali]
+    # emoji_m = [cat['role']['emoji_role'] for cat in cat_magistrali]
+    # await app.send(ctx, " ".join(emoji_t) )
+    # await app.send(ctx, " ".join(emoji_m))
+    role_ids_user = [] # [role.id for role in ctx.author.roles] # activate for ephemerial messages
 
-    dropdown_select_t = Select(custom_id="asd_lol1", placeholder="Seleziona TRIENNALI", max_values=len(options_tags_t))
-    dropdown_select_m = Select(custom_id="asd_lol2", placeholder="Seleziona MAGISTRALI", max_values=len(options_tags_m))
+    options_tags_t = app.get_role_options(cat_triennali,  role_ids_user)
+    options_tags_m = app.get_role_options(cat_magistrali, role_ids_user)
+
+    dropdown_select_t = Select(custom_id="select_triennali", placeholder="Seleziona corsi: Triennali", max_values=len(options_tags_t))
+    dropdown_select_m = Select(custom_id="select_magistrali", placeholder="Seleziona corsi: Magistrali", max_values=len(options_tags_m))
 
     dropdown_select_t.add_callback(ctx, toggle_tag)
+    dropdown_select_m.add_callback(ctx, toggle_tag)
 
     for option in options_tags_t:
         dropdown_select_t.append_option(option)
@@ -126,10 +177,9 @@ async def test2(ctx):
     url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png'
     await app.send_embed(ctx, view, title, description, url)
 
-
 @bot.command()
-@commands.is_owner()
-async def corsi(ctx):
+@commands.has_permissions(administrator=True)
+async def corsi_old(ctx):
     # Embed per il primo menu sui corsi di studio
     view = BasicInterfaceView()
     title = 'Menu scelta Corsi di Studio'
@@ -142,7 +192,7 @@ async def corsi(ctx):
 
 
 @bot.command()
-@commands.is_owner()
+@commands.has_permissions(administrator=True)
 async def extra(ctx):
     # Embed per il primo menu sui corsi di studio
     view = ExtraInterfaceView()
@@ -155,7 +205,7 @@ async def extra(ctx):
 
 
 @bot.command()
-@commands.is_owner()
+@commands.has_permissions(administrator=True)
 async def regole(ctx):
     view = RulesAcceptView()
     title = 'Regole del server UniVR Science'
@@ -170,12 +220,13 @@ async def regole(ctx):
 
 
 @bot.command()
-@commands.is_owner()
+@commands.has_permissions(administrator=True)
 async def create_channels(ctx):
     """
     Carica file di configurazione json e crea categorie, canali e ruoli
     TODO: Carica configurazione in un'altra funzione una volta sola
     """
+
     cat_loaded = 0
     json_data = app.load_configuration()
     num_cats = len(json_data['categories'])
@@ -240,10 +291,10 @@ async def create_channels(ctx):
 
 
 @bot.command()
-@commands.is_owner()
+@commands.has_permissions(administrator=True)
 async def get_categories(ctx, *except_ids):
     """
-    Elimina categoria e tutti i canali contenuti
+    ritorna gli id di tutte le categorie
     """
     ids = []
     for channel in ctx.guild.channels:
@@ -256,13 +307,38 @@ async def get_categories(ctx, *except_ids):
 
 
 @bot.command()
-@commands.is_owner()
+@commands.has_permissions(administrator=True)
+async def get_roles(ctx, *except_ids):
+    """
+    ritorna gli id di tutti i ruoli
+    """
+    ids = []
+    for role in ctx.guild.roles:
+        id_str = str(role.id)
+        if id_str in except_ids: continue
+        ids.append(id_str)
+
+    await app.send(ctx, " ".join(ids))
+
+
+@bot.command()
+@commands.has_permissions(administrator=True)
 async def delete_category(ctx, *category_ids):
     """
-    Elimina categoria e tutti i canali contenuti
+    Elimina categoria e tutti i canali contenuti, supporta id multipli.
     """
     for category_id in category_ids:
         await app.delete_category(ctx, category_id)
+
+
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def delete_role(ctx, *role_ids):
+    """
+    Elimina una serie di ruoli, data una lista di id.
+    """
+    for role_id in role_ids:
+        await app.delete_role(ctx, role_id)
 
 
 if __name__ == '__main__':

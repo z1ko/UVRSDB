@@ -123,26 +123,29 @@ class BotUniVR(commands.Bot):
         await self.change_presence(activity=discord.Game(new_status))
 
 
+
 class MyBot:
 
     def __init__(self):
         self.config = {}
         self.bot = BotUniVR()
 
+    ### DATA
+    # encoding='utf-8'
     def load_configuration(self):
-        with open('configuration.json', 'r') as f:
+        with open('configuration.json', 'r', encoding='utf-8') as f:
             print('Caricamento configurazione...')
-            self.config = json.load(f)
+            self.config = json.load(f,)
         return self.config
 
+    # encoding='utf-8'
     def save_configuration(self, json_data=None):
         if json_data is None: json_data = self.config
-        with open('configuration.json', 'w') as f:
+        with open('configuration.json', 'w', encoding='utf-8') as f:
             print('Salvataggio nuova configurazione...')
-            json.dump(json_data, f, indent=4)
+            json.dump(json_data, f, indent=4, ensure_ascii=False)
 
-
-    def get_categories(self, triennali = True, magistrali = True):
+    def get_roles(self, triennali=True, magistrali=True):
         self.load_configuration()
         categories = self.config['categories']
         if triennali and magistrali: return categories
@@ -151,8 +154,8 @@ class MyBot:
         if magistrali:
             return list(filter(lambda cat: cat['category']['group_category'] == 'M', categories))
 
-
-    def get_role_options(self, categories=None):
+    def get_role_options(self, categories=None, default_ids=None, none_option=True):
+        if default_ids is None: user_role_ids = []
         if categories is None:
             self.load_configuration()
             categories = self.config['categories']
@@ -160,24 +163,25 @@ class MyBot:
         options = []
         for category in categories:
             role_data = category['role']
+            role_active = role_data['id_role'] in default_ids
             if role_data['id_role'] == -1: continue
-            option = discord.SelectOption( value=role_data['id_role'], label=role_data['name_role'] )
+            option = discord.SelectOption(value=role_data['id_role'], label=role_data['name_role'], emoji=role_data['emoji_role'], default=role_active)
             options.append(option)
+
+        if none_option:
+            option = discord.SelectOption(value=-1, label="None")
+            options.append(option)
+
         return options
 
-
-    async def send_embed(self, ctx, view, title, description, url=None):
-        embed_degrees = Embed(title=title, description=description)
-        if url is not None:
-            embed_degrees.set_thumbnail(url=url)
-        await ctx.send(view=view, embed=embed_degrees)
-
-    async def send(self, ctx, msg):
-        await ctx.send(content=msg)
-
-    async def get_roles(self, ctx):
-        roles = await ctx.guild.roles()
-        return roles
+    def get_categories(self, triennali=True, magistrali=True):
+        self.load_configuration()
+        categories = self.config['categories']
+        if triennali and magistrali: return categories
+        if triennali:
+            return list(filter(lambda cat: cat['category']['group_category'] == 'T', categories))
+        if magistrali:
+            return list(filter(lambda cat: cat['category']['group_category'] == 'M', categories))
 
     def hex2int(self,hex_color):
         hex_vals = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
@@ -190,6 +194,24 @@ class MyBot:
             int_color += hex_vals[digit] * 16 ** length
             length -= 1
         return int_color
+
+    ### API
+
+    # OUTPUT
+
+    async def send_embed(self, ctx, view, title, description, url=None) -> discord.Message:
+        embed_msg = Embed(title=title, description=description)
+        if url is not None:
+            embed_msg.set_thumbnail(url=url)
+        return await ctx.send(view=view, embed=embed_msg)
+
+    async def send(self, ctx, msg) -> discord.Message:
+        return await ctx.send(content=msg)
+
+    # ROLES
+    async def get_roles(self, ctx):
+        roles = await ctx.guild.roles()
+        return roles
 
     async def create_role(self, ctx, role_name, role_color=None) -> discord.Role:
         try:
@@ -215,6 +237,21 @@ class MyBot:
         if len(roles) > 0: return roles[0]
         return None
 
+    async def delete_role(self, ctx, role_id: int):
+        role = await self.fetch_role(ctx, int(role_id))
+        if role is None or role.name == "@everyone":
+            await self.send(ctx, "The role doesn't exist!")
+            return False
+
+        try:
+            await role.delete()
+            return True
+        except discord.Forbidden:
+            await self.send(ctx, "Missing Permissions to delete this role!")
+            return False
+
+    # CHANNELS AND CATEGORIES
+
     async def fetch_channel(self, ctx, channel_id) -> discord.abc.GuildChannel:
         try:
             channel = await ctx.guild.fetch_channel(channel_id)
@@ -224,7 +261,7 @@ class MyBot:
             return None
 
     async def find_channel(self, ctx, name, kind=None) -> discord.abc.GuildChannel:
-        channels = ctx.guild.channels # List[discord.GuildChannel]
+        channels = ctx.guild.channels  # List[discord.GuildChannel]
         if kind is not None: channels = list(filter(lambda c: c.type.value == CHANNEL_TYPE[kind], channels))
         channels = list(filter(lambda c: c.name == name, channels))
         if len(channels) > 0: return channels[0]
@@ -268,7 +305,6 @@ class MyBot:
         await channel.edit(overwrites={})
 
     async def permission_channel(self, ctx, channel, role, permission_name, permission_value) -> bool:
-        # TODO:
         try:
             perms = {permission_name: permission_value}
             perms_overwrite = discord.PermissionOverwrite(**perms)
@@ -323,6 +359,3 @@ class MyBot:
 
         except discord.NotFound as e:
             print('Categoria non trovata: ' + e.text)
-
-
-
