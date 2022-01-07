@@ -2,15 +2,45 @@
 
 # Rappresenta un'associazione Ruolo - Nome, utilizzata per personalizzare
 # la struttura del server
+import json
+
+
 class RoleTag:
     def __init__(self, role_id, emoji, name):
         self.role_id = role_id
         self.emoji = emoji
         self.name = name
-        
+
+    @staticmethod
+    def load_configuration():
+        with open('configuration.json', 'r', encoding='utf-8') as f:
+            print('Caricamento configurazione RoleTag...')
+            return json.load(f)
+        return None
+
+
+    @staticmethod
+    def get_roles(config, triennali=True, magistrali=True):
+        categories = config['categories']
+        if triennali and not magistrali:
+            categories = list(filter(lambda cat: cat['category']['group_category'] == 'T', categories))
+        if magistrali and not triennali:
+            categories = list(filter(lambda cat: cat['category']['group_category'] == 'M', categories))
+        roles = [cat["role"] for cat in categories]
+        return roles
+
+    @staticmethod
+    def GetTags(triennali=True, magistrali=True):
+        config = RoleTag.load_configuration()
+        roles = RoleTag.get_roles(config, triennali=triennali, magistrali=magistrali)
+        #print(roles)
+        tags = [RoleTag(role["id_role"], role["emoji_role"], role["name_role"]) for role in roles]
+        return tags
 
 
 
+TAGS_DEGREE_T = RoleTag.GetTags(triennali=True, magistrali=False)
+TAGS_DEGREE_M = RoleTag.GetTags(triennali=False, magistrali=True)
 
 TAGS_DEGREE = [
 

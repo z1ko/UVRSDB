@@ -135,7 +135,7 @@ class MyBot:
     def load_configuration(self):
         with open('configuration.json', 'r', encoding='utf-8') as f:
             print('Caricamento configurazione...')
-            self.config = json.load(f,)
+            self.config = json.load(f)
         return self.config
 
     # encoding='utf-8'
@@ -199,8 +199,9 @@ class MyBot:
 
     # OUTPUT
 
-    async def send_embed(self, ctx, view, title, description, url=None) -> discord.Message:
-        embed_msg = Embed(title=title, description=description)
+    async def send_embed(self, ctx, view, title, description=None, url=None) -> discord.Message:
+
+        embed_msg = Embed(title=title) if description is None else Embed(title=title, description=description)
         if url is not None:
             embed_msg.set_thumbnail(url=url)
         return await ctx.send(view=view, embed=embed_msg)

@@ -2,6 +2,7 @@ import math
 import random
 from typing import Union, List, Dict, Optional, Any
 import discord
+import discord.ui
 from discord.embeds import Embed
 from discord.errors import NotFound
 from discord.ext import commands
@@ -10,7 +11,7 @@ from discord.utils import get
 from dotenv import dotenv_values
 
 from univr import BotUniVR, MyBot
-from ui import Select, Button, BasicInterfaceView, ExtraInterfaceView, RulesAcceptView
+from ui import Select, Button, BasicInterfaceView,BasicInterfaceViewT,BasicInterfaceViewM, ExtraInterfaceView, RulesAcceptView
 
 app = MyBot()
 bot = app.bot
@@ -20,8 +21,12 @@ def main():
     config = dotenv_values('configuration.env')
     bot.run(config['TOKEN'])
 
-
-
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def get_config(ctx):
+    file = discord.File("configuration.json")  # an image in the same folder as the main bot file
+    embed = discord.Embed()  # any kwargs you want here
+    await ctx.send(file=file)
 
 @bot.command()
 @commands.has_permissions(administrator=True)
@@ -114,29 +119,37 @@ async def toggle_tag(ctx: discord.ext.commands.Context, itm: Select, interaction
 
     # print(itm, interaction)
     user = interaction.user
-    role_ids_selected = [int(role_id) for role_id in interaction.data['values']]
-    role_ids_user = [role.id for role in user.roles]
     role_ids_all = [option.value for option in itm.options]
-    role_ids_on = list(filter(lambda role_id: role_id in role_ids_selected and role_id not in role_ids_user, role_ids_all))
-    role_ids_off = list(filter(lambda role_id: role_id not in role_ids_on and role_id in role_ids_all, role_ids_user))
+    role_ids_user = [role.id for role in user.roles]
+
+    role_ids_selected = [int(role_id) for role_id in interaction.data['values']]
+    role_ids_selected = list(filter(lambda role_id: role_id in role_ids_all, role_ids_selected))
+
+    role_ids_off = list(filter(lambda role_id: role_id not in role_ids_selected, role_ids_all))
+    role_ids_off = list(filter(lambda role_id: role_id in role_ids_user, role_ids_off))
+
+
+    role_ids_on = list(filter(lambda role_id: role_id not in role_ids_user, role_ids_selected))
+
     # print("role_ids_selected",role_ids_selected)
     # print("role_ids_user",role_ids_user)
     # print("role_ids_all",role_ids_all)
     # print("role_ids_on",role_ids_on)
     # print("role_ids_off",role_ids_off)
 
-    roles_on = list(filter(lambda role: role.id in role_ids_on, interaction.guild.roles))
     roles_off = list(filter(lambda role: role.id in role_ids_off, interaction.guild.roles))
+    roles_on = list(filter(lambda role: role.id in role_ids_on, interaction.guild.roles))
 
-    for role_on in roles_on:
-        await user.add_roles(role_on)
+    await user.remove_roles(*roles_off)
+    await user.add_roles(*roles_on)
 
+"""
     for role_off in roles_off:
         await user.remove_roles(role_off)
 
-
-    #await app.send(ctx, "ok!")
-
+    for role_on in roles_on:
+        await user.add_roles(role_on)
+"""
 
 @bot.command()
 @commands.has_permissions(administrator=True)
@@ -189,6 +202,35 @@ async def corsi_old(ctx):
         """
     url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png'
     await app.send_embed(ctx, view, title, description, url)
+
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def corsi_msg(ctx):
+    # Embed per il primo menu sui corsi di studio
+    view = discord.ui.View()
+    title = 'Menu scelta Corsi di Studio'
+    description = """
+        Scegliendo il tuo corso di studio dal menu a tendina qui sotto potrai customizzare l'aspetto del server 
+        visualizzando solo i canali di tuoi interesse.  
+        """
+    url = 'https://upload.wikimedia.org/wikipedia/it/thumb/1/1e/Universit%C3%A0Verona.svg/1200px-Universit%C3%A0Verona.svg.png'
+    await app.send_embed(ctx, view, title, description, url)
+
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def corsi_t(ctx):
+    # Embed per il primo menu sui corsi di studio
+    view = BasicInterfaceViewT()
+    title = 'Triennali                                        '
+    await app.send_embed(ctx, view, title)
+
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def corsi_m(ctx):
+    # Embed per il primo menu sui corsi di studio
+    view = BasicInterfaceViewM()
+    title = 'Magisatrali                                      '
+    await app.send_embed(ctx, view, title)
 
 
 @bot.command()
@@ -246,9 +288,9 @@ async def create_channels(ctx):
         print(f"[{cat_loaded}/{num_cats}] {category_name}")
         ## Role
         role = None
-        if role_id != -1:  # by id
+        if role_id != -1: # by id
             role = await app.fetch_role(ctx, role_id)
-        else:  # by name
+        if role is None:  # by name
             role = await app.find_role(ctx, role_name)
         if role is None:  # create
             role = await app.create_role(ctx, role_name, role_color=role_color)
@@ -256,9 +298,9 @@ async def create_channels(ctx):
 
         ## Category
         category = None
-        if category_id != -1:  # by id
+        if category_id != -1: # by id
             category = await app.fetch_channel(ctx, category_id)
-        else:  # by name
+        if category is None:  # by name
             category = await app.find_channel(ctx, category_name, kind='GUILD_CATEGORY')
         if category is None:  # create
             category = await app.create_category(ctx, category_name)
@@ -274,9 +316,9 @@ async def create_channels(ctx):
             channel_name = channel_data["name_channel"]
 
             channel = None
-            if channel_id != -1:  # by id
+            if channel_id != -1: # by id
                 channel = await app.fetch_channel(ctx, channel_id)
-            else:  # by name
+            if channel is None:  # by name
                 channel = await app.find_channel(ctx, channel_name, kind='GUILD_TEXT')
             if channel is None:  # create
                 channel = await app.create_channel(ctx, channel_name, category=category)
@@ -339,6 +381,7 @@ async def delete_role(ctx, *role_ids):
     """
     for role_id in role_ids:
         await app.delete_role(ctx, role_id)
+
 
 
 if __name__ == '__main__':
