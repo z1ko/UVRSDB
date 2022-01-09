@@ -8,7 +8,7 @@ from discord.ext import commands, tasks
 from itertools import cycle
 import discord
 
-from tags import TAGS_DEGREE, TAGS_SPECIAL, TAGS_YEAR
+from tags import TAGS_DEGREE, TAGS_DEGREE_T, TAGS_DEGREE_M, TAGS_SPECIAL, TAGS_YEAR
 
 
 class Select(discord.ui.Select):
@@ -46,10 +46,12 @@ class TagDropdown(discord.ui.Select):
         options = []
         for tag in tags:
             options.append(discord.SelectOption(
-                value = tag.role_id, 
-                label = tag.name,
-                emoji = tag.emoji
+                value=str(tag.role_id),
+                label=str(tag.name),
+                emoji=tag.emoji
             ))
+
+        options.append(discord.SelectOption(value="-1", label="none"))
 
         super().__init__(
             placeholder = placeholder, 
@@ -63,18 +65,71 @@ class TagDropdown(discord.ui.Select):
     # Aggiorna tag dell'utente che ha usato il dropdown
     async def callback(self, interaction):
         user: discord.Member = interaction.user
+        print(user)
+        print(self.values)
 
+        role_ids_all = [int(tag.role_id) for tag in self.tags]
+        role_ids_user = [role.id for role in user.roles]
+
+        role_ids_selected = [int(role_id) for role_id in interaction.data['values']]
+        role_ids_selected = list(filter(lambda role_id: role_id in role_ids_all, role_ids_selected))
+
+        role_ids_off = list(filter(lambda role_id: role_id not in role_ids_selected, role_ids_all))
+        role_ids_off = list(filter(lambda role_id: role_id in role_ids_user, role_ids_off))
+
+
+        role_ids_on = list(filter(lambda role_id: role_id not in role_ids_user, role_ids_selected))
+
+        # print("role_ids_selected",role_ids_selected)
+        # print("role_ids_user",role_ids_user)
+        # print("role_ids_all",role_ids_all)
+        # print("role_ids_on",role_ids_on)
+        # print("role_ids_off",role_ids_off)
+
+        roles_off = list(filter(lambda role: role.id in role_ids_off, interaction.guild.roles))
+        roles_on = list(filter(lambda role: role.id in role_ids_on, interaction.guild.roles))
+
+        await user.remove_roles(*roles_off)
+        await user.add_roles(*roles_on)
+
+        #response = self.response(user, target_roles)
+        await interaction.response.send_message("ok!", ephemeral=True)
+
+
+        """
         # Rimuovo tutte le tags relative a questo dropdown
-        for tag in self.tags:
-            tag_role = interaction.guild.get_role(int(tag.role_id))
-            await user.remove_roles(tag_role)
+        role_ids = [int(tag.role_id) for tag in self.tags]
+        roles = list(filter(lambda role: role.id in role_ids, interaction.guild.roles))
 
+        await user.remove_roles(*roles)
+
+        role_ids = [int(role_id) for role_id in self.values]
+        roles = list(filter(lambda role: role.id in role_ids, interaction.guild.roles))
+        await user.add_roles(*roles)
+        """
+
+        """
         # Setta le tag corrette
-        for role_id in self.values:
-            target_role = interaction.guild.get_role(int(role_id))
-            await user.add_roles(target_role)
 
-        print(f'Aggiunti Tag corsi di studio per {user.nick}')
+        for tag in self.tags:
+            if tag.role_id == "-1": continue
+            tag_role = interaction.guild.get_role(int(tag.role_id))
+            if tag_role is None: continue
+            print(f'Removing role {tag_role}')
+            await user.remove_roles(roles)
+        """
+
+        """
+        # Setta le tag corrette
+
+        for role_id in self.values:
+            if role_id == "-1": continue
+            target_role = interaction.guild.get_role(int(role_id))
+            if target_role is None: continue
+            print(f'Adding role {target_role}')
+            await user.add_roles(target_role)
+        """
+        #print(f'Aggiunti Tag corsi di studio per {user.nick}')
 
         # Informa l'utente
         #response = self.response(user, target_roles)
@@ -134,11 +189,45 @@ class DegreeDropdown(TagDropdown):
     def response(self, user, tag) -> str:
         return f'🎉 Ora segui il corso di {tag.name}!'
 
+# Dropdown per i corsi di studio
+class DegreeDropdownT(TagDropdown):
+    def __init__(self):
+        super().__init__(
+            'dropdown:menu_t',
+            'Scegli il corso di studi che stai seguendo',
+            TAGS_DEGREE_T, len(TAGS_DEGREE_T)
+        )
+
+    def response(self, user, tag) -> str:
+        return f'🎉 Ora segui il corso di {tag.name}!'
+
+# Dropdown per i corsi di studio
+class DegreeDropdownM(TagDropdown):
+    def __init__(self):
+        super().__init__(
+            'dropdown:menu_m',
+            'Scegli il corso di studi che stai seguendo',
+            TAGS_DEGREE_M, len(TAGS_DEGREE_M)
+        )
+
+    def response(self, user, tag) -> str:
+        return f'🎉 Ora segui il corso di {tag.name}!'
+
 
 # Interfaccia per controllare l'aspetto del server in base ai corsi
 class BasicInterfaceView(TagView):
     def __init__(self):
         super().__init__([DegreeDropdown()])
+
+# Interfaccia per controllare l'aspetto del server in base ai corsi
+class BasicInterfaceViewT(TagView):
+    def __init__(self):
+        super().__init__([DegreeDropdownT()])
+
+# Interfaccia per controllare l'aspetto del server in base ai corsi
+class BasicInterfaceViewM(TagView):
+    def __init__(self):
+        super().__init__([DegreeDropdownM()])
 
 # ================================================================================================
 
