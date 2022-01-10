@@ -221,7 +221,7 @@ async def corsi_msg(ctx):
 async def corsi_t(ctx):
     # Embed per il primo menu sui corsi di studio
     view = BasicInterfaceViewT()
-    title = 'Triennali                                        '
+    title = ' Triennali                                        '
     await app.send_embed(ctx, view, title)
 
 @bot.command()
@@ -229,7 +229,7 @@ async def corsi_t(ctx):
 async def corsi_m(ctx):
     # Embed per il primo menu sui corsi di studio
     view = BasicInterfaceViewM()
-    title = 'Magisatrali                                      '
+    title = ' Magistrali                                      '
     await app.send_embed(ctx, view, title)
 
 
