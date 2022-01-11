@@ -72,5 +72,5 @@ TAGS_SPECIAL = [
     RoleTag(role_id = 907657792024895578, emoji = '🎥', name = 'Cineforum'),
     RoleTag(role_id = 907657843774210049, emoji = '🍹', name = 'AperiScienze'),
     RoleTag(role_id = 907667976491270195, emoji = '🕹️', name = 'Global Game Jam'),
-
+    RoleTag(role_id = 930501196039479367, emoji = '♞', name = 'Chess'), # 🙾
 ]
